@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--  gymclasses_list.html content starts here-->
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Gymclasses Info Row -->
+        <div class="row">
+            {% for item in gymclasses %}
+
+            <div
+                class="col-lg-4 col-md-6 col-12 {% if forloop.last and gymclasses|length|divisibleby:2 == False%} mx-md-auto {% endif %}">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="image-container">
+                            <p>Bbhdude cdci sjnadn,ln xsmxjdidnnjlcnmjcccmxj<br>
+                                nsnsjd cndjlafnn,avhkh\lhvhlv\jlv\n,\vjl<br></p>
+                        </div>
+                        <div class="gymclass-link">
+                            <h2 class="text-center"><span class="gymclass-title">{{ item.title }}</span><span
+                                    class="gymclass-name">{{ item.name }}</span></h2>
+                            <a href="http://"> Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            {% endfor %}
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+<!-- gymclasses_list.html content ends here -->
+{% endblock %}
