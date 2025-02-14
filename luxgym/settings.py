@@ -18,6 +18,7 @@ if os.path.exists('env.py'):
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATE_DIR = BASE_DIR / 'templates'
 
 
 # Quick-start development settings - unsuitable for production
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'luxgym.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -88,6 +89,12 @@ WSGI_APPLICATION = 'luxgym.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://*127.0.0.1:8000/",
+    "https://*.herokuapp.com"
+
+]
 
 
 # Password validation
