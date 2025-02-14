@@ -10,7 +10,7 @@ STATUS = (("0", "Draft"), ("1", "Publish"))
 class FitnessClasses(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    auhtor = models.ForeignKey(
+    author = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True,  related_name='fitnessclasses')
     name = models.CharField(max_length=200, blank=True)
     content = models.TextField()
