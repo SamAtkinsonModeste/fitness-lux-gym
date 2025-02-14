@@ -402,3 +402,4 @@ FodyWeavers.xsd
 # my project ignores
 .venv/
 .vscode/
+env.py
