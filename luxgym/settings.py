@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import sys
+
 if os.path.exists('env.py'):
     import env
 
@@ -25,7 +27,7 @@ TEMPLATE_DIR = BASE_DIR / 'templates'
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-6%-!jzyd+8jhiytqrpa#xtn&^1in)dxt1qsyt75s7t_t9*h8gt'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -98,11 +100,10 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
+if 'test' in sys.argv:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 CSRF_TRUSTED_ORIGINS = [
-    "http://*127.0.0.1:8000/",
-    "https://*.herokuapp.com"
-
-]
+    "HTTPS://*.codeinstitute-ide.net/", "https://*.herokuapp.com"]
 
 
 # Password validation
