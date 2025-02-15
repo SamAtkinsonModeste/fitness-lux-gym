@@ -8,11 +8,11 @@ STATUS = (("0", "Draft"), ("1", "Publish"))
 
 
 class FitnessClasses(models.Model):
-    title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(
+    gym_class_name = models.CharField(max_length=200, unique=True)
+    short_bullets_gymclassname = models.SlugField(max_length=200, unique=True)
+    gymclass_creator = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True,  related_name='fitnessclasses')
-    name = models.CharField(max_length=200, blank=True)
+    gym_class_name_extension = models.CharField(max_length=200, blank=True)
     content = models.TextField()
     filename = models.CharField(max_length=255, blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
