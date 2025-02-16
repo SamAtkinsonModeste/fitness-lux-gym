@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-# from luxclasses.models import FitnessClasses
+from luxclasses.models import FitnessClasses
 
 # Create your models here.
 
@@ -15,7 +15,9 @@ class FitnessTimetable(models.Model):
                    ("Thursday", "Thursday"), ("Firday", "Friday"), ("Staurday", "Saturday"), ("Sunday", "Sunday")]
 
     gym_timetable_schedular = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True,  related_name='fitnesstimetable')
+        User, on_delete=models.SET_NULL, null=True,  related_name="fitnesstimetable")
+    user_books = models.ForeignKey(
+        User, on_delete=models.CASCADE, default="1", related_name="booked_classes")
     year = models.CharField(
         max_length=4, choices=YEAR_CHOICES, default="2025", unique=True)
     month = models.CharField(
@@ -24,8 +26,8 @@ class FitnessTimetable(models.Model):
         max_length=2, choices=WEEK_CHOICES, default="1", unique=True)
     day = models.CharField(max_length=9, choices=DAY_CHOICES,
                            default="Monday", unique=True)
-    # gym_class = models.ForeignKey(
-    #     FitnessClasses, on_delete=models.SET_NULL, null=True,  related_name='fitnessclasses')
+    gym_class = models.ForeignKey(
+        FitnessClasses, on_delete=models.SET_NULL, null=True,  related_name="fitnessclasses")
     gym_class_time = models.CharField(default="Evening | 18:30")
     gym_class_date = models.DateTimeField(auto_now=True)
     gym_class_duration = models.CharField(
