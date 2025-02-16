@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'luxclasses',
-    'luxtimetable',
+
 ]
 
 SITE_ID = 1
