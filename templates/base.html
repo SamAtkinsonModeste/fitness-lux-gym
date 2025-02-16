@@ -4,6 +4,9 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+{% url 'timetable' as timetable_ul%}
+{% url 'usertimetable' as usertimetable_ul%}
+
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -45,12 +48,30 @@
                         <a class="nav-link {% if request.path == luxhomepage_url %}active"
                             aria-current="page{% endif %}" href="{% url 'home' %}">Home</a>
                     </li>
+
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
                             href="{% url 'account_logout' %}">Logout</a>
                     </li>
+
+
+                    {% if user.is_superuser%}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == timetable_url %}active" aria-current="page{% endif %}"
+                            href="{% url 'timetable' %}">Create Timetable</a>
+                    </li>
+
                     {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == usertimetable_url %}active"
+                            aria-current="page{% endif %}" href="{% url 'usertimetable' %}">Timetable</a>
+                    </li>
+
+                    {% endif %}
+
+                    {% else %}
+
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
                             href="{% url 'account_signup' %}">Join</a>
