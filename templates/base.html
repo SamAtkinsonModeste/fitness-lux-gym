@@ -1,8 +1,9 @@
 {% load static %}
+
 {% url 'home' as luxhomepage_url %}
-{% url 'acount_login' as login_url %}
-{% url 'acount_signup' as signup_url %}
-{% url 'acount_logout' as logout_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -44,22 +45,25 @@
                         <a class="nav-link {% if request.path == luxhomepage_url %}active"
                             aria-current="page{% endif %}" href="{% url 'home' %}">Home</a>
                     </li>
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
                             href="{% url 'account_logout' %}">Logout</a>
                     </li>
+                    {% else %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
                             href="{% url 'account_signup' %}">Join</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
-                            href="{% url 'account_login' %}">Home</a>
+                            href="{% url 'account_login' %}">Login</a>
                     </li>
 
+                    {% endif %}
                 </ul>
                 <span class="navbar-text text-muted">
-                    Elevate Your Strength, Empower Your Life
+                    Elevate Your Strength, Kiss My Arse
                 </span>
             </div>
         </div>
