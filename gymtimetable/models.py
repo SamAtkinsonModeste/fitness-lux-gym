@@ -4,6 +4,8 @@ from luxclasses.models import FitnessClasses
 
 # Create your models here.
 
+STATUS = (("0", "Draft"), ("1", "Publish"))
+
 
 class LuxGymTimetable(models.Model):
     gymclass_organiser = models.ForeignKey(
@@ -15,6 +17,7 @@ class LuxGymTimetable(models.Model):
     teacher = models.CharField(max_length=200)
     gym_class_duration = models.CharField(max_length=100)
     created_on = models.DateTimeField(auto_now=True)
+    status = models.CharField(choices=STATUS, default="1")
 
     class Meta:
         ordering = ['created_on']
