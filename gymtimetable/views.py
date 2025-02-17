@@ -29,7 +29,7 @@ class LuxGymTimetableView(ListView):
         context['create_classTime'] = LuxGymTimetableForm()
         return context
 
-    def form_process(self, request):
+    def form_process(request):
         if request.method == "POST":
             form_done = LuxGymTimetableForm(request.POST)
             if form_done.is_valid():
