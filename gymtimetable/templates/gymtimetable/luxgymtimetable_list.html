@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+{% for item in luxgymtimetable %}
+<h2>{{ item.gym_class.gym_class_name }}</h2>
+<p>Day: {{ item.day }}</p>
+<p>Time: {{ item.gym_class_time }}</p>
+{% empty %}
+<p>No timetable entries found.</p>
+{% endfor %}
+
+
+{% endblock content %}

@@ -18,9 +18,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path("timetablelux/", include("timetablelux.urls")),
-    path("acounts/", include("allauth.urls")),
+    path("gymtimetable/", include("gymtimetable.urls")),
+    path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
-    path('', include('luxclasses.urls')),
+    path('', include("luxclasses.urls")),
 
 ]
