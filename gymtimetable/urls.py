@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import LuxGymTimetableView
+from .views import ScheduledClassListView
 
 urlpatterns = [
 
-    path("", LuxGymTimetableView.as_view(), name="timetable"),
-    path("", LuxGymTimetableView.as_view(), name="usertimetable"),
+    path("", ScheduledClassListView.as_view(), name="timetable"),
+    # path("", TimetableView.as_view(), name="usertimetable"),
 ]

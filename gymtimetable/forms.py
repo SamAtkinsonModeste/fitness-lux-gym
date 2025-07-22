@@ -1,9 +1,9 @@
-from .models import LuxGymTimetable
+from .models import ScheduledClass
 from django import forms
 
 
-class LuxGymTimetableForm(forms.ModelForm):
+class ScheduledClassForm(forms.ModelForm):
     class Meta:
-        model = LuxGymTimetable
+        model = ScheduledClass
         fields = ["gymclass_organiser", "gym_class", "day",
                   "gym_class_time", "teacher", "gym_class_duration"]
