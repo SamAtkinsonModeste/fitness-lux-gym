@@ -16,7 +16,7 @@
 
     <!-- Form Card -->
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-6 col-lg-8">
             <div class="card shadow-sm p-4">
                 <h4 class="card-title text-center mb-3">Add a New Class</h4>
                 {% load crispy_forms_tags %}
@@ -24,9 +24,11 @@
                     {% csrf_token %}
                     {% crispy add_class %}
                     <div class="text-center mt-4">
-                        <button id="submitButton" type="submit" class="btn btn-primary btn-lg w-100">
-                            Add Class
-                        </button>
+                        <div class="col-md-8 col-lg-4 mx-auto">
+                            <button id="submitButton" type="submit" class="btn btn-primary btn-lg w-100">
+                                Add Class
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>
