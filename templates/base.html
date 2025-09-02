@@ -4,8 +4,8 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
-{% url 'timetable' as timetable_url%}
-{% url 'usertimetable' as usertimetable_url%}
+{% url 'gymtimetable' as gymtimetable_url%}
+{% url 'usergymtimetable' as usergymtimetable_url%}
 
 
 <!DOCTYPE html>
@@ -60,14 +60,14 @@
 
                     {% if user.is_superuser%}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == timetable_url %}active" aria-current="page{% endif %}"
-                            href="{% url 'timetable' %}">Create Timetable</a>
+                        <a class="nav-link {% if request.path == gymtimetable_url %}active"
+                            aria-current="page{% endif %}" href="{% url 'gymtimetable' %}">Create Timetable</a>
                     </li>
 
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == usertimetable_url %}active"
-                            aria-current="page{% endif %}" href="{% url 'usertimetable' %}">Timetable</a>
+                        <a class="nav-link {% if request.path == usergymtimetable_url %}active"
+                            aria-current="page{% endif %}" href="{% url 'usergymtimetable' %}">Timetable</a>
                     </li>
 
                     {% endif %}
