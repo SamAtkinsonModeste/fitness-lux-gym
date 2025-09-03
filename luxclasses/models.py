@@ -24,4 +24,4 @@ class FitnessClasses(models.Model):
         ordering = ['-created_on']
 
     def __str__(self):
-        return f"{self.gym_class_name} - {self.created_on}"
+        return f"{self.gym_class_name}"
