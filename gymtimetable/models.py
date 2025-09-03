@@ -40,4 +40,4 @@ class ScheduledClass(models.Model):
         ordering = ['day','gym_class_time','created_on']
 
     def __str__(self):
-        return f"{self.get_day_display()} - Teacher is {self.teacher}"
+        return f"{self.get_day_display()} {self.gym_class_time} - Teacher is {self.teacher}"
