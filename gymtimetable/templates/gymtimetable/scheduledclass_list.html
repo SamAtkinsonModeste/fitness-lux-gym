@@ -4,36 +4,86 @@
 
 {% block content %}
 
-<div class="container mt-5">
+<div class="container mt-3">
     <!-- Welcome Message -->
     <div class="text-center mb-4">
         <h2 class="fw-bold">Welcome, Admin!</h2>
         <p class="lead text-muted">
             Manage and schedule Lux Gym's classes from this front-end admin panel.<br>
-            Use the form below to add new classes to the timetable.
+            Use the panel labelled <strong>Add a New Class</strong> to add, new classes to the timetable.<br>
+            You can also edit and delete any created classes in the panel lab.
         </p>
     </div>
-
-    <!-- Form Card -->
-    <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-8">
+    <!-- Wrapper for creating classes forms-->
+    <div class="d-flex flex-column flex-md-row justify-content-center gap-4">
+        <!-- Create Gym Class Form Card -->
+        <div class="flex-fill">
             <div class="card shadow-sm p-4">
                 <h4 class="card-title text-center mb-3">Add a New Class</h4>
                 {% load crispy_forms_tags %}
                 <form method="post" id="addGymClass">
                     {% csrf_token %}
-                    {% crispy add_class %}
+                    <input type="hidden" name="action" value="create">
+                    {% crispy create_form %}
                     <div class="text-center mt-4">
                         <div class="col-md-8 col-lg-4 mx-auto">
                             <button id="submitButton" type="submit" class="btn btn-primary btn-lg w-100">
                                 Add Class
                             </button>
                         </div>
-                    </div>
+
                 </form>
             </div>
         </div>
     </div>
-</div>
 
+    <!-- List of created gym classes -->
+
+    <div class="list-group flex-fill">
+        {% for cls in scheduled_classes %}
+        <div class="list-group-item">
+            <h4 class="text-center mb-4">Created Gym Classes</h4>
+            <div class="justify-content-between align-items-center">
+                <div>
+                    <strong>{{ cls.get_day_display }}</strong> -
+                    {{ cls.gym_class }} :
+                    {{ cls.gym_class_time }}
+                    <strong>{{ cls.teacher }}</strong> -
+                    {{ cls.get_gym_class_duration_display }}
+                </div>
+                <div class="ms-3 d-flex gap-2">
+                    <!-- Edit: show inline edit form by adding ?edit=<pk> -->
+                    <a href="?edit={{ cls.pk }}" class="btn btn-sm btn-outline-secondary">Edit</a>
+
+                    <!-- Delete: post action=delete + pk -->
+                    <form method="post" class="d-inline">
+                        {% csrf_token %}
+                        <input type="hidden" name="action" value="delete">
+                        <input type="hidden" name="pk" value="{{ cls.pk }}">
+                        <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+
+            {# Inline edit form for the selected item #}
+            {% if edit_obj and edit_obj.pk == cls.pk %}
+            <hr>
+            <h6 class="mb-2">Edit this class</h6>
+            <form method="post" class="mb-2">
+                {% csrf_token %}
+                <input type="hidden" name="action" value="update">
+                <input type="hidden" name="pk" value="{{ cls.pk }}">
+                {% crispy edit_form %}
+                <div class="d-flex gap-2">
+                    <button class="btn btn-primary btn-sm" type="submit">Save changes</button>
+                    <a href="{% url 'gymtimetable' %}" class="btn btn-outline-secondary btn-sm">Cancel</a>
+                </div>
+            </form>
+            {% endif %}
+        </div>
+        {% empty %}
+        <p class="text-muted">No classes yet — add one above.</p>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
