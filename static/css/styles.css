@@ -65,5 +65,19 @@ body {
 
 .gymclass-name {
     color: var(--mid-light-silver);
-    text-shadow: 0 1px 1px var(--dark-main);
+    text-shadow: 0 1px 1px var(--my-brand-accent-color);
+}
+
+.read-more {
+    color: var(--mid-light-silver);
+    text-shadow: 0 1px 1px var(--my-brand-accent-color);
+}
+
+.read-more i {
+    margin-left: 10px;
+}
+
+.read-more:hover {
+    color: var(--my-brand-accent-color);
+    text-shadow: 0 1px 1px var(--mid-light-silver);
 }
