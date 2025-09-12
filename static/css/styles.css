@@ -7,7 +7,7 @@
     --drak-grey: #3e3e3e;
     --mid-grey-one: #414141;
     --mid-grey-two: #707070;
-    -mid-light-silver: #ececec;
+    --mid-light-silver: #ececec;
     -light-silver: #dedede;
     --dark-main: #552d71;
     --light-main: #d099f6;
@@ -31,12 +31,22 @@ body {
 
 }
 
-/* .image-container {
-    position: relative;
-    padding: 100px;
-    color: transparent;
-} */
+.image-container img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
 
+.custom-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 40%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+}
 
 #logo {
     max-width: 110px;
@@ -50,19 +60,10 @@ body {
 
 .gymclass-title {
     color: var(--my-brand-accent-color);
-    text-shadow: 0 1px 1px var(--my-brand-dark-color);
+    text-shadow: 0 1px 1px var(--mid-light-silver);
 }
 
 .gymclass-name {
-    color: var(--drak-grey);
-    text-shadow: 0 1px 1px var(--my-brand-accent-color);
+    color: var(--mid-light-silver);
+    text-shadow: 0 1px 1px var(--dark-main);
 }
-
-
-/* .gymclass-link {
-    position: absolute;
-    left: 0;
-    bottom: 30%;
-    width: 100%;
-    border: solid 1px var(--my-brand-accent-color);
-} */
