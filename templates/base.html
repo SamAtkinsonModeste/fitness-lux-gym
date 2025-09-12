@@ -64,11 +64,7 @@
                             aria-current="page{% endif %}" href="{% url 'gymtimetable' %}">Create Timetable</a>
                     </li>
 
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == usergymtimetable_url %}active"
-                            aria-current="page{% endif %}" href="{% url 'usergymtimetable' %}">Timetable</a>
-                    </li>
+
 
                     {% endif %}
 
