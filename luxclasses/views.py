@@ -6,10 +6,10 @@ from .models import FitnessClasses
 
 class FitnessClassesView(ListView):
     """
-    Returns all objects of :model:`luxclasses.FitnessClasses
+    Returns all objects of :model:luxclasses.FitnessClasses
 
     **Context**
-    ``context_object_name``
+    context_object_name
     - gym class name
     - extended text to the gym class name key words related to the class
     - description of class
@@ -19,5 +19,6 @@ class FitnessClassesView(ListView):
     **Template:**
     :template: luxclasses/fitnessclass_list.html
     """
+
     model = FitnessClasses
     context_object_name = "fitnessclasses"
