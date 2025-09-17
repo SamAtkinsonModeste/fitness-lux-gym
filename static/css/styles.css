@@ -19,6 +19,14 @@ body {
     font-family: "Proxima Nova", sans-serif;
 }
 
+
+.tagline-nav {
+    color: var(--my-main-brand-color);
+    font-size: 1.2rem;
+}
+
+
+
 .lux-footer {
     background-image: linear-gradient(50deg,
             hsl(0deg 0% 1%) 0%,
@@ -27,8 +35,29 @@ body {
             hsl(344deg 0% 24%) 61%,
             hsl(344deg 0% 16%) 76%,
             hsl(0deg 0% 1%) 100%);
-    color: var(--my-brand-silver-color);
 
+
+}
+
+.lux-footer,
+.lux-footer a {
+    color: var(--my-brand-silver-color);
+}
+
+.lux-footer a>i:hover {
+    transform: scale(1.5);
+}
+
+.hero {
+    height: 45vh;
+    background-image: url("../images/fitness_classes/studio.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.well-shadow {
+    text-shadow: 0 1px 2px var(--my-brand-dark-color);
 }
 
 .image-container img {
@@ -37,16 +66,20 @@ body {
     width: 100%;
 }
 
+
+
 .custom-overlay {
     position: absolute;
     bottom: 0;
     left: 50%;
-    height: 40%;
+    height: 35%;
     transform: translateX(-50%);
-    width: 100%;
     text-align: center;
-    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+
 }
+
 
 #logo {
     max-width: 110px;
@@ -58,26 +91,118 @@ body {
     font-family: linotype-didot, serif;
 }
 
+.text-shadow {
+    color: var(--mid-light-silver);
+    text-shadow: 0 1px 1px var(--light-main);
+}
+
 .gymclass-title {
-    color: var(--my-brand-accent-color);
-    text-shadow: 0 1px 1px var(--mid-light-silver);
+    font-size: 1.2rem;
+    padding: 5px 0;
+    margin-bottom: 5px;
+
 }
 
 .gymclass-name {
-    color: var(--mid-light-silver);
-    text-shadow: 0 1px 1px var(--my-brand-accent-color);
+    font-size: 1.1rem;
+    margin-bottom: 3px;
 }
 
 .read-more {
-    color: var(--mid-light-silver);
-    text-shadow: 0 1px 1px var(--my-brand-accent-color);
+    transform: translateY(-6px);
 }
+
+
 
 .read-more i {
     margin-left: 10px;
 }
 
 .read-more:hover {
-    color: var(--my-brand-accent-color);
+    color: var(--light-main);
     text-shadow: 0 1px 1px var(--mid-light-silver);
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 370px) {
+    .custom-overlay {
+        height: 30%;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+
+    .fancy-grid>.card-col {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .fancy-grid>.card-col:last-child:nth-child(odd) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .gymclass-title {
+        font-size: 1.3rem;
+    }
+
+    .gymclass-name {
+        font-size: 1.2rem;
+    }
+
+    .read-more {
+        transform: translateY(-8px);
+    }
+}
+
+@media (min-width: 992px) {
+    .gymclass-title {
+        font-size: 1.3rem;
+        margin-bottom: 0;
+    }
+
+    .gymclass-name {
+        font-size: 1.2rem;
+    }
+
+    .read-more {
+        transform: translateY(-10px);
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .fancy-grid>.card-col {
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+
+    /* make items 2, 4, and 9 wide (8 of 12), then repeat every 9 */
+    .fancy-grid>.card-col:nth-child(9n+2),
+    .fancy-grid>.card-col:nth-child(9n+4),
+    .fancy-grid>.card-col:nth-child(9n) {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+
+}
+
+@media (min-width: 1300px) {
+
+    .gymclass-title {
+        font-size: 1.8rem;
+        margin-bottom: 0;
+    }
+
+    .gymclass-name {
+        font-size: 1.4rem;
+    }
+
+    .read-more {
+        transform: translateY(-4px);
+        font-size: 1.2rem;
+    }
 }
