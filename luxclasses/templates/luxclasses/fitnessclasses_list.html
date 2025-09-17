@@ -5,40 +5,49 @@
 {% block content %}
 
 <!-- fitnessclasses_list.html content starts here -->
+<div class="container-fluid hero d-flex flex-column justify-content-center align-items-center text-center text-white">
+    <div class="hero-text">
+        <h1 class="display-3 fw-bold welcome well-shadow">Welcome to LuxGym</h1>
+        <p class="lead mb-4 tagline well-shadow">Elevate Your Strength | Empower Your Life</p>
+        <p class="mb-4 welcome-text well-shadow">Discover expert-led classes, supportive trainers,<br> and a community
+            that
+            motivates
+            you
+            every step of
+            the way.</p>
+    </div>
+
+</div>
 <div class="container">
-    <p>I am the home page with all the available classes</p>
+
     <!-- Gymclasses Info Row-->
-    <div class="row">
+    <div class="row fancy-grid">
         {% for item in fitnessclasses %}
-        <div
-            class="col-lg-4 col-md-6 col-12 my-2{% if forloop.last and fitnessclasses|length|divisibleby:2 == False  %} mx-md-auto {% endif %}">
+
+
+        <div class="col-12 my-2 card-col">
             <div class="card h-100 mb-4">
                 <div class="h-100 d-flex flex-column">
                     <div class="image-container position-relative w-100 h-100">
                         <img src="{% static 'images/fitness_classes/' %}{{ item.filename }}"
                             alt="{{ item.gym_class_name }}" class="img-fluid">
                     </div>
-
-                    <!-- Fitness Class Link-->
-                    <div class="overlay custom-overlay p">
-                        <h2 class="text-center">
-                            <span class="gymclass-title d-block">{{ item.gym_class_name }}</span>
-                        </h2>
-                        <h4>
-                            <span class="gymclass-name d-block">{{ item.gym_class_name_extension }} </span>
-                        </h4>
-
-                        <a href="#" class="read-more btn mt-2"> Read More <i class="fas fa-arrow-circle-right"></i>
-                        </a>
+                    <div class="overlay custom-overlay p-2">
+                        <h2 class="text-center gymclass-title d-block text-shadow">{{ item.gym_class_name }}</h2>
+                        <h4 class="gymclass-name d-block text-shadow">{{ item.gym_class_name_extension }}</h4>
+                        <a href="#" class="read-more text-shadow btn">Read More <i
+                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
-
-
                 </div>
             </div>
         </div>
-        {% endfor %}
 
+
+        {% endfor %}
     </div>
+
+
+
 </div>
 
 {% endblock content %}
