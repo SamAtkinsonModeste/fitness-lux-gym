@@ -15,10 +15,24 @@
     --light-accent: #cefcfa;
 }
 
+/**************
+Main Page Components
+****************/
+
 body {
     font-family: "Proxima Nova", sans-serif;
+    color: var(--my-brand-dark-color);
+    background: linear-gradient(to right bottom, #f8f8f8, #f6f6f6, #f4f4f4, #f2f2f2, #f0f0f0, #f0f0f0, #f0f0f0, #f0f0f0, #f2f2f2, #f4f4f4, #f6f6f6, #f8f8f8);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+
 }
 
+.custom-nav {
+    background: var(--my-brand-white-color);
+    box-shadow: 0 1px 3px var(--dark-main);
+}
 
 .tagline-nav {
     color: var(--my-main-brand-color);
@@ -48,6 +62,12 @@ body {
     transform: scale(1.5);
 }
 
+
+/********************
+custom sections
+*****************/
+
+/*** Fitnessclasses - Home Page ****/
 .hero {
     height: 45vh;
     background-image: url("../images/fitness_classes/studio.webp");
@@ -123,6 +143,113 @@ body {
     text-shadow: 0 1px 1px var(--mid-light-silver);
 }
 
+.btn {
+    text-shadow: 0 1px 1px var(--my-brand-dark-color);
+}
+
+.btn-brand {
+    background: var(--my-main-brand-color);
+    color: var(--my-brand-white-color);
+}
+
+.btn-brand:hover,
+.btn-save {
+    background: var(--my-brand-accent-color);
+    color: var(--my-brand-dark-color);
+}
+
+.btn-signup,
+.btn-edit,
+.btn-delete:hover {
+    background: var(--dark-accent);
+    color: var(--my-brand-white-color);
+}
+
+.btn-signup:hover,
+.btn-edit:hover,
+.btn-signup:active {
+    background-color: var(--my-main-brand-color);
+    color: var(--my-brand-white-color);
+}
+
+
+.btn-delete,
+.btn-save:hover {
+    background-color: var(--dark-main);
+    color: var(--my-brand-white-color);
+}
+
+
+.btn-delete:hover,
+.accent {
+    background: var(--my-brand-accent-color);
+    color: var(--my-brand-dark-color);
+}
+
+.teacher {
+    background: var(--light-main);
+    color: var(--my-brand-dark-color);
+}
+
+
+/*****Scheduledclass Create Tiemtable Admin Page ********/
+.brand {
+    color: var(--my-main-brand-color);
+    text-shadow: 0 1px 1px var(--my-brand-dark-color);
+}
+
+.accent,
+.teacher {
+    border-radius: 5px;
+    padding: 1px 2px;
+    text-shadow: 0 1px 1px var(--my-brand-silver-color);
+}
+
+/*** FORMS ******/
+
+label.form-label {
+    font-weight: 600;
+    color: var(--dark-main);
+    text-shadow: 0 1px 1px var(--my-brand-dark-color);
+    font-size: 1.3rem;
+}
+
+input.form-control,
+select.form-select,
+textarea.form-control {
+    border-radius: 8px;
+    border: 2px solid rgba(62, 62, 62, 0.5);
+    padding: 10px;
+    color: var(--dark-accent);
+    text-shadow: 0 1px 1px var(--my-brand-dark-color);
+    /* font-weight: bold; */
+    font-size: 1.2rem;
+}
+
+input.form-control:focus,
+select.form-select:focus {
+    border-color: rgba(6, 146, 140, 0.5);
+    box-shadow: 0 0 4px rgba(159, 81, 212, 0.5);
+}
+
+select.form-select option {
+    background: var(--drak-grey);
+    color: var(--my-brand-white-color);
+    text-shadow: 0 1px 1px var(--my-brand-dark-color);
+}
+
+select.form-select option:first-child {
+    color: var(--my-brand-white-color);
+    background-color: var(--dark-main);
+}
+
+
+select.form-select option:hover {
+    background: var(--my-main-brand-color) !important;
+    color: var(--my-brand-white-color);
+}
+
+
 /* MEDIA QUERIES */
 
 @media (min-width: 370px) {
@@ -134,6 +261,8 @@ body {
 
 
 @media (min-width: 768px) {
+
+
 
     .fancy-grid>.card-col {
         flex: 0 0 50%;
@@ -175,6 +304,11 @@ body {
 }
 
 @media (min-width: 1200px) {
+
+    #logo {
+        max-width: 130px;
+    }
+
     .fancy-grid>.card-col {
         flex: 0 0 30%;
         max-width: 30%;
