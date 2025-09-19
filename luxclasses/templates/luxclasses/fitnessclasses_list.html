@@ -35,8 +35,8 @@
                     <div class="overlay custom-overlay p-2">
                         <h2 class="text-center gymclass-title d-block text-shadow">{{ item.gym_class_name }}</h2>
                         <h4 class="gymclass-name d-block text-shadow">{{ item.gym_class_name_extension }}</h4>
-                        <a href="#" class="read-more text-shadow btn">Read More <i
-                                class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{% url 'luxclasses:class_detail' item.pk %}" class="read-more text-shadow btn">Read
+                            More <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
