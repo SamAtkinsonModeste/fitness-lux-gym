@@ -1,4 +1,4 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import FitnessClasses
 
 # Create your views here.
@@ -22,3 +22,8 @@ class FitnessClassesView(ListView):
 
     model = FitnessClasses
     context_object_name = "fitnessclasses"
+
+
+class FitnessClassDetailView(DetailView):
+    model = FitnessClasses
+    context_object_name = "fitnessclass"
