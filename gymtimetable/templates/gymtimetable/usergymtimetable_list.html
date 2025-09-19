@@ -1,1 +1,51 @@
-<h1>User's Timetable Page</h1>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container my-4">
+  <h2 class="mb-3">Gym Timetable</h2>
+
+  {% regroup classes by get_day_display as day_list %}
+
+  {% for day in day_list %}
+  <h2 class="mt-4">{{ day.grouper }}</h2>
+
+  {% for scheduled_class in day.list %}
+  <div class="card mb-3">
+    <div class="card-body d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        {% if scheduled_class.gym_class.thumb_filename %}
+        <img src="{% static 'images/fitness_thumbnails/' %}{{ scheduled_class.gym_class.thumb_filename }}"
+          alt="{{ scheduled_class.gym_class.gym_class_name }} thumbnail" class="img-fluid rounded"
+          style="width: 96px; height: 96px; object-fit: cover;">
+        {% endif %}
+        <div>
+          <h5 class="card-title mb-1">{{ scheduled_class.gym_class }}</h5>
+          <p class="mb-0 small text-muted">
+            {{ scheduled_class.get_gym_class_slot_display }} •
+            {{ scheduled_class.get_gym_class_duration_display }}
+          </p>
+        </div>
+      </div>
+
+      {% if user.is_authenticated %}
+      <form method="post" action="{% url 'gymtimetable:toggle_booking' scheduled_class.pk %}">
+        {% csrf_token %}
+        {% if scheduled_class.id in booked_ids %}
+        <button type="submit" class="btn btn-outline-secondary">Booked — Cancel</button>
+        {% else %}
+        <button type="submit" class="btn btn-primary">Book</button>
+        {% endif %}
+      </form>
+      {% else %}
+      <a class="btn btn-primary" href="{% url 'account_login' %}">Log in to book</a>
+      {% endif %}
+    </div>
+  </div>
+  {% empty %}
+  <p class="text-muted">No classes for {{ day.grouper }}.</p>
+  {% endfor %}
+  {% endfor %}
+</div>
+
+{% endblock %}
