@@ -19,6 +19,7 @@ class FitnessClasses(models.Model):
     gym_class_name_extension = models.CharField(max_length=200, blank=True)
     content = models.TextField()
     filename = models.CharField(max_length=255, blank=True, null=True)
+    detail_filename = models.CharField(max_length=255, blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.CharField(choices=STATUS, default="0")
     excerpt = models.TextField(blank=True)
