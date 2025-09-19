@@ -1,11 +1,11 @@
 {% load static %}
 
-{% url 'home' as luxhomepage_url %}
+{% url 'luxclasses:home' as luxhomepage_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
-{% url 'gymtimetable' as gymtimetable_url%}
-{% url 'usergymtimetable' as usergymtimetable_url%}
+{% url 'gymtimetable:gymtimetable' as gymtimetable_url%}
+{% url 'gymtimetable:usergymtimetable' as usergymtimetable_url%}
 
 
 <!DOCTYPE html>
@@ -38,7 +38,7 @@
     <nav class="navbar custom-nav navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
 
-            <a class="navbar-brand" href="{% url 'home' %}"><img id="logo" class="fluid"
+            <a class="navbar-brand" href="{% url 'luxclasses:home' %}"><img id="logo" class="fluid"
                     src="{% static 'images/logos/Logo-name-no-bg.png' %} " alt="luxgym logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == luxhomepage_url %}active"
-                            aria-current="page{% endif %}" href="{% url 'home' %}">Home</a>
+                            aria-current="page{% endif %}" href="{% url 'luxclasses:home' %}">Home</a>
                     </li>
 
                     {% if user.is_authenticated %}
