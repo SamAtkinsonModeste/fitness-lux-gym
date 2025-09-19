@@ -1,8 +1,10 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.shortcuts import redirect, get_object_or_404
 from django.views.generic import ListView
+from django.urls import reverse
 
-from .models import ScheduledClass
+from .models import ScheduledClass, Booking
 from .forms import ScheduledClassForm
 
 
@@ -30,7 +32,8 @@ class ScheduledClassListView(ListView):
 
     model = ScheduledClass
     context_object_name = "scheduled_classes"
-    ordering = ["day", "gym_class_time", "created_on"]
+    ordering = ["day", "gym_class_slot", "created_on"]
+    template_name = "gymtimetable/scheduledclass_list.html"
 
     def get_queryset(self):
         return (
@@ -56,14 +59,14 @@ class ScheduledClassListView(ListView):
         action = request.POST.get("action")
         if action not in {"create", "update", "delete"}:
             messages.error(request, "Unknown action.")
-            return redirect("gymtimetable")
+            return redirect("gymtimetable:admin_timetable")
 
         if not (request.user.is_authenticated and request.user.is_superuser):
             messages.error(
                 request,
                 "Only admins can perform timetable changes.",
             )
-            return redirect("gymtimetable")
+            return redirect("gymtimetable:class_list")
 
         if action == "create":
             form = ScheduledClassForm(request.POST)
@@ -72,37 +75,85 @@ class ScheduledClassListView(ListView):
                 obj.gymclass_organiser = request.user
                 obj.save()
                 messages.success(request, "Class created.")
+                return redirect("gymtimetable:admin_timetable")
             else:
-                messages.error(
-                    request,
-                    "Please fix the errors in the create form.",
-                )
+                messages.error(request, form.errors.as_text())
+                self.object_list = self.get_queryset()
+                context = self.get_context_data()
+                context["create_form"] = form
+                return self.render_to_response(context)
 
         elif action == "update":
             pk = request.POST.get("pk")
             if not pk or not pk.isdigit():
                 messages.error(request, "Invalid item.")
-                return redirect("gymtimetable")
+                return redirect("gymtimetable:admin_timetable")
 
             obj = get_object_or_404(ScheduledClass, pk=pk)
             form = ScheduledClassForm(request.POST, instance=obj)
             if form.is_valid():
                 form.save()
                 messages.success(request, "Class updated.")
+                return redirect("gymtimetable:admin_timetable")
             else:
-                messages.error(
-                    request,
-                    "Please fix the errors in the edit form.",
-                )
+                messages.error(request, form.errors.as_text())
+                self.object_list = self.get_queryset()
+                context = self.get_context_data()
+                context["edit_obj"] = obj
+                context["edit_form"] = form
+                return self.render_to_response(context)
 
         elif action == "delete":
             pk = request.POST.get("pk")
             if not pk or not pk.isdigit():
                 messages.error(request, "Invalid item.")
-                return redirect("gymtimetable")
+                return redirect("gymtimetable:admin_timetable")
 
             obj = get_object_or_404(ScheduledClass, pk=pk)
             obj.delete()
             messages.success(request, "Class removed.")
 
-        return redirect("gymtimetable")
+        return redirect("gymtimetable:admin_timetable")
+
+
+class UserGymTimetableListView(ListView):
+    model = ScheduledClass
+    context_object_name = "classes"
+    template_name = "gymtimetable/usergymtimetable_list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.request.user.is_authenticated:
+            context["booked_ids"] = set(
+                Booking.objects.filter(member=self.request.user).values_list(
+                    "booked_class_id", flat=True
+                )
+            )
+        else:
+            context["booked_ids"] = set()
+        return context
+
+
+@login_required
+def toggle_booking(request, pk):
+    if request.method != "POST":
+        return redirect(reverse("gymtimetable:class_list"))
+
+    scheduled_class = get_object_or_404(ScheduledClass, pk=pk)
+
+    existing_booking = Booking.objects.filter(
+        member=request.user,
+        booked_class=scheduled_class,
+    )
+
+    if existing_booking.exists():
+        existing_booking.delete()
+        messages.success(request, "Booking cancelled")
+    else:
+        Booking.objects.create(
+            member=request.user,
+            booked_class=scheduled_class,
+        )
+        messages.success(request, "Class booked!")
+
+    return redirect(reverse("gymtimetable:class_list"))
