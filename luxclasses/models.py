@@ -18,6 +18,9 @@ class FitnessClasses(models.Model):
     )
     gym_class_name_extension = models.CharField(max_length=200, blank=True)
     content = models.TextField()
+    thumb_filename = models.CharField(
+        max_length=255, blank=True, help_text="e.g kettlebell-thumb.webp"
+    )
     filename = models.CharField(max_length=255, blank=True, null=True)
     detail_filename = models.CharField(max_length=255, blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
