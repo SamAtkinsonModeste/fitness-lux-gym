@@ -70,7 +70,7 @@ custom sections
 /*** Fitnessclasses - Home Page ****/
 .hero {
     height: 45vh;
-    background-image: url("../images/fitness_classes/studio.webp");
+    background-image: url("../images/fitness_classes/studio-home.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
