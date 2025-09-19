@@ -108,3 +108,21 @@ class ScheduledClass(models.Model):
             f"{day_label} {time_label} - {class_label}"
             f" - Teacher: {teacher_label}"
         )
+
+
+class Booking(models.Model):
+    member = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="class_bookings"
+    )
+    booked_class = models.ForeignKey(
+        ScheduledClass,
+        on_delete=models.CASCADE,
+        related_name="member_bookings",
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ("member", "booked_class")
+
+    def __str__(self):
+        return f"{self.member} booked {self.booked_class}"
