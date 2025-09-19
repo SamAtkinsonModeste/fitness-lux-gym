@@ -76,7 +76,7 @@ class ScheduledClass(models.Model):
         related_name="gym_classes",
     )
     day = models.IntegerField(choices=DAYS_OF_WEEK, default=0)
-    gym_class_time = models.IntegerField(choices=CLASS_TIMES, default=0)
+    gym_class_slot = models.IntegerField(choices=CLASS_TIMES, default=0)
     teacher = models.IntegerField(choices=TEACHERS, default=0)
     gym_class_duration = models.IntegerField(
         choices=CLASS_DURATION_TIME, default=0
@@ -85,13 +85,13 @@ class ScheduledClass(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ["day", "gym_class_time", "created_on"]
+        ordering = ["day", "gym_class_slot", "created_on"]
 
     def __str__(self):
         day_label = self.get_day_display() if self.day is not None else "—"
         time_label = (
-            self.get_gym_class_time_display()
-            if self.gym_class_time is not None
+            self.get_gym_class_slot_display()
+            if self.gym_class_slot is not None
             else "—"
         )
         teacher_label = (
