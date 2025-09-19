@@ -1,4 +1,5 @@
 from django import forms
+
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Row, Column
 from .models import ScheduledClass
@@ -11,7 +12,7 @@ class ScheduledClassForm(forms.ModelForm):
         fields = [
             "gym_class",
             "day",
-            "gym_class_time",
+            "gym_class_slot",
             "teacher",
             "gym_class_duration",
         ]
@@ -32,7 +33,7 @@ class ScheduledClassForm(forms.ModelForm):
             ),
             Row(
                 Column("teacher", css_class="col-md-6"),
-                Column("gym_class_time", css_class="col-md-6"),
+                Column("gym_class_slot", css_class="col-md-6"),
                 css_class="g-3",
             ),
             Row(
