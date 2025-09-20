@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% load i18n %}
 {% load account socialaccount %}
 
@@ -10,16 +10,18 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <h3>{% trans "Login" %}</h3>
+      <h2 class="brand logs-head">{% trans "Member Login" %}</h2>
 
-      <p>{% blocktrans %}Welcome back to theLux Fitness Gym. To book a class or leave a review for your favorite class,
-        please <strong>Login</strong>.<br>
-        If you have not created an account yet, then <a class="link" href="{{ signup_url }}">Register to Join</a>
-        first.{% endblocktrans %}</p>
+      <p class="text-center login-text">{% blocktrans %}<span class="signin-welcome">Welcome back to <span
+            class="brand">Lux Fitness Gym.</span></span><br> <span class="signin-text">To book a class or leave a
+          review - <br> please <strong class="brand">Login</strong>.<br>
+          If you are not a member - <br> then <strong class="lux-links"><a class="link lux-links"
+              href="{{ signup_url }}">Register
+              to Join</a></strong></span>{% endblocktrans %}</p>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+    <div id="login" class="col-md-8 mt-3 offset-md-2">
       <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form.as_p }}
