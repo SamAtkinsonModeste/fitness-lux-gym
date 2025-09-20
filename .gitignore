@@ -406,3 +406,4 @@ env.py
 fixtures/
 views copy.py
 db.sqlite3
+auth copy.css

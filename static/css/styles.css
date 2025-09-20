@@ -11,13 +11,15 @@
     -light-silver: #dedede;
     --dark-main: #552d71;
     --light-main: #d099f6;
-    --dark-accent: #06928c;
+    --dark-accent: #1e244a;
     --light-accent: #cefcfa;
 }
 
 /**************
 Main Page Components
 ****************/
+
+
 
 body {
     font-family: "Proxima Nova", sans-serif;
@@ -28,6 +30,9 @@ body {
     min-height: 100vh;
 
 }
+
+
+
 
 .custom-nav {
     background: var(--my-brand-white-color);
@@ -66,6 +71,30 @@ body {
 /********************
 custom sections
 *****************/
+
+/********* SIGN IN OUT REGISTER ************/
+.logs-head {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+
+.signin-welcome {
+    font-size: 1.0950rem;
+    font-weight: bold;
+}
+
+.signin-text {
+    font-size: 1.1rem;
+    line-height: 25px;
+}
+
+a.lux-links,
+a.lux-links:link,
+a.lux-links:visited {
+    padding: 3px 1px;
+    color: var(--dark-main);
+}
 
 /*** Fitnessclasses - Home Page ****/
 .hero {
@@ -192,7 +221,7 @@ custom sections
 }
 
 
-/*****Scheduledclass Create Tiemtable Admin Page ********/
+/*****Scheduledclass Create Timetable Admin Page ********/
 .brand {
     color: var(--my-main-brand-color);
     text-shadow: 0 1px 1px var(--my-brand-dark-color);
@@ -207,12 +236,16 @@ custom sections
 
 /*** FORMS ******/
 
+
 label.form-label {
     font-weight: 600;
     color: var(--dark-main);
     text-shadow: 0 1px 1px var(--my-brand-dark-color);
     font-size: 1.3rem;
 }
+
+
+
 
 input.form-control,
 select.form-select,
@@ -222,7 +255,6 @@ textarea.form-control {
     padding: 10px;
     color: var(--dark-accent);
     text-shadow: 0 1px 1px var(--my-brand-dark-color);
-    /* font-weight: bold; */
     font-size: 1.2rem;
 }
 
@@ -262,6 +294,19 @@ select.form-select option:hover {
 
 @media (min-width: 768px) {
 
+    .logs-head {
+        font-size: 2.3rem;
+        margin-bottom: 15px;
+    }
+
+    .signin-welcome {
+        font-size: 1.4rem;
+    }
+
+    .signin-text {
+        font-size: 1.3rem;
+        line-height: 30px;
+    }
 
 
     .fancy-grid>.card-col {
@@ -288,6 +333,16 @@ select.form-select option:hover {
 }
 
 @media (min-width: 992px) {
+    .signin-welcome {
+        font-size: 1.5rem;
+    }
+
+    .signin-text {
+        font-size: 1.4rem;
+        line-height: 35px;
+    }
+
+
     .gymclass-title {
         font-size: 1.3rem;
         margin-bottom: 0;
@@ -304,6 +359,18 @@ select.form-select option:hover {
 }
 
 @media (min-width: 1200px) {
+    .logs-head {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .signin-welcome {
+        font-size: 1.6rem;
+    }
+
+    .signin-text {
+        font-size: 1.5rem;
+    }
 
     #logo {
         max-width: 130px;
@@ -326,6 +393,14 @@ select.form-select option:hover {
 
 @media (min-width: 1300px) {
 
+    .signin-welcome {
+        font-size: 1.8rem;
+    }
+
+    .signin-text {
+        font-size: 1.7rem;
+    }
+
     .gymclass-title {
         font-size: 1.8rem;
         margin-bottom: 0;
@@ -338,5 +413,14 @@ select.form-select option:hover {
     .read-more {
         transform: translateY(-4px);
         font-size: 1.2rem;
+    }
+}
+
+
+
+@media (min-width: 1400px) {
+    .logs-head {
+        font-size: 2.8rem;
+        margin-bottom: 30px;
     }
 }
