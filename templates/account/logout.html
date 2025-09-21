@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% load i18n %}
 
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
@@ -8,9 +8,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <h3>{% trans "Sign Out" %}</h3>
+      <h2 class="brand logs-head">{% trans "Sign Out" %}</h2>
 
-      <p>{% trans 'Are you sure you want to sign out?' %}</p>
+      <p class="text-center login-text signin-welcome">{% trans 'Are you sure you want to sign out?' %}</p>
     </div>
   </div>
   <div class="row">
