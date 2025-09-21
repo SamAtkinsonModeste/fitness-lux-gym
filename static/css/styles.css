@@ -248,10 +248,11 @@ a.lux-links:visited {
 .gymclass-name {
     font-size: 1.1rem;
     margin-bottom: 3px;
+    transform: translateY(-10px);
 }
 
 .read-more {
-    transform: translateY(-6px);
+    transform: translateY(-19px);
 }
 
 
@@ -451,6 +452,8 @@ select.form-select option:hover {
 
     /****** HOME PAGE *********/
 
+
+
     .fancy-grid>.card-col {
         flex: 0 0 50%;
         max-width: 50%;
@@ -467,10 +470,6 @@ select.form-select option:hover {
 
     .gymclass-name {
         font-size: 1.2rem;
-    }
-
-    .read-more {
-        transform: translateY(-8px);
     }
 
     .detail-text {
@@ -511,14 +510,16 @@ select.form-select option:hover {
     .gymclass-title {
         font-size: 1.3rem;
         margin-bottom: 0;
+        transform: none;
     }
 
     .gymclass-name {
         font-size: 1.2rem;
+        transform: none;
     }
 
     .read-more {
-        transform: translateY(-10px);
+        transform: translateY(-6px);
     }
 
     /****** TIMETABLE *********/
