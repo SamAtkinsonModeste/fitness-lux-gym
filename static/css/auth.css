@@ -18,7 +18,6 @@
 
 
 
-
 /* Scope to auth forms without touching templates */
 form[action*="login"],
 form[action*="logout"],

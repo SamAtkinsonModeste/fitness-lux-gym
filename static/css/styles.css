@@ -34,6 +34,21 @@
             hsl(204deg 100% 50%) 83%,
             hsl(231deg 93% 69%) 92%,
             hsl(276deg 60% 57%) 100%);
+
+    --lux-reverse-color-gradient: linear-gradient(310deg,
+            hsl(0deg 0% 97%) 0%,
+            hsl(173deg 61% 92%) 8%,
+            hsl(174deg 74% 87%) 17%,
+            hsl(174deg 79% 81%) 25%,
+            hsl(175deg 82% 75%) 33%,
+            hsl(176deg 85% 67%) 42%,
+            hsl(177deg 93% 49%) 50%,
+            hsl(186deg 100% 49%) 58%,
+            hsl(192deg 100% 50%) 67%,
+            hsl(197deg 100% 50%) 75%,
+            hsl(204deg 100% 50%) 83%,
+            hsl(231deg 93% 69%) 92%,
+            hsl(276deg 60% 57%) 100%);
 }
 
 /**************
@@ -104,22 +119,53 @@ custom sections
 
 a.lux-links,
 a.lux-links:link,
+.breadcrumb .lux-links-bread,
 a.lux-links:visited {
     padding: 3px 1px;
     color: var(--dark-main);
+    font-weight: bold;
 }
 
-/*** Fitnessclasses - Home Page ****/
-.hero {
+
+.breadcrumb .breadcrumb-name {
+    font-size: 1rem;
+    color: var(--dark-accent);
+    font-weight: bold;
+}
+
+/*** Fitnessclasses - Home Page & Detial Pages ****/
+.hero,
+.hero-detail {
     height: 45vh;
+}
+
+.hero {
     background-image: url("../images/fitness_classes/studio-home.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
+.hero-detail {
+    height: 30vh;
+    background-image: url("../images/fitness_details/studio-21920x1080.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.detail-nav {
+    background: var(--lux-colour-gradient);
+    padding: 1px;
+}
+
 .well-shadow {
     text-shadow: 0 1px 2px var(--my-brand-dark-color);
+}
+
+.image-container img,
+.image-detail img {
+    margin-bottom: 0 !important;
 }
 
 .image-container img {
@@ -129,6 +175,40 @@ a.lux-links:visited {
 }
 
 
+.image-detail img {
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+.image-detail {
+    max-width: 800px;
+    height: auto;
+}
+
+.image-detail,
+.detail-text-container {
+    padding: 5px;
+}
+
+
+.image-detail {
+    box-shadow: inset 0px 0px 5px rgba(159, 81, 212, 0.5);
+    border-radius: 8px;
+
+}
+
+
+
+.detail-text {
+    font-size: 1.2em;
+}
+
+.back {
+    border-color: var(--my-main-brand-color)
+}
 
 .custom-overlay {
     position: absolute;
@@ -203,7 +283,8 @@ a.lux-links:visited {
 .btn-signup,
 .btn-signout,
 .btn-edit,
-.btn-delete:hover {
+.btn-delete:hover,
+.back:hover {
     background: var(--dark-accent);
     color: var(--my-brand-white-color);
 }
@@ -241,6 +322,7 @@ a.lux-links:visited {
     color: var(--my-main-brand-color);
     text-shadow: 0 1px 1px var(--my-brand-dark-color);
 }
+
 
 .accent,
 .teacher {
@@ -297,6 +379,8 @@ select.form-select option:hover {
 }
 
 
+
+
 /* MEDIA QUERIES */
 
 @media (min-width: 370px) {
@@ -344,6 +428,10 @@ select.form-select option:hover {
 
     .read-more {
         transform: translateY(-8px);
+    }
+
+    .detail-text {
+        font-size: 1.3em;
     }
 }
 
@@ -404,6 +492,14 @@ select.form-select option:hover {
         max-width: 40%;
     }
 
+    .detail-text-container {
+        padding-left: 20px;
+    }
+
+    .detail-text {
+        font-size: 1.5em;
+    }
+
 }
 
 @media (min-width: 1300px) {
@@ -428,6 +524,10 @@ select.form-select option:hover {
     .read-more {
         transform: translateY(-4px);
         font-size: 1.2rem;
+    }
+
+    .detail-text {
+        font-size: 1.7em;
     }
 }
 
