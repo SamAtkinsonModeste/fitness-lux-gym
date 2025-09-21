@@ -378,7 +378,23 @@ select.form-select option:hover {
     color: var(--my-brand-white-color);
 }
 
+.alert-success {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--dark-accent);
+    text-shadow: 0 1px 1px var(--mid-light-silver);
+    background: var(--lux-colour-gradient);
+    transform: translateY(9px);
+}
 
+.alert-danger {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--my-brand-white-color);
+    text-shadow: 0 1px 1px var(--my-brand-accent-color);
+    background: var(--lux-dark-gradient);
+    transform: translateY(9px);
+}
 
 
 /* MEDIA QUERIES */
