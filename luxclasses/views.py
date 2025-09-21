@@ -1,9 +1,12 @@
 from django.views.generic import ListView, DetailView
+from django.utils.decorators import method_decorator
+from django.views.decorators.clickjacking import xframe_options_exempt
 from .models import FitnessClasses
 
 # Create your views here.
 
 
+@method_decorator(xframe_options_exempt, name="dispatch")
 class FitnessClassesView(ListView):
     """
     Returns all objects of :model:luxclasses.FitnessClasses
