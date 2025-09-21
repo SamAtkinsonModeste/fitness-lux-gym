@@ -311,6 +311,10 @@ a.lux-links:visited {
     color: var(--my-brand-dark-color);
 }
 
+.btn-book {
+    transform: translate(10px, -2px);
+}
+
 .teacher {
     background: var(--light-main);
     color: var(--my-brand-dark-color);
@@ -323,12 +327,30 @@ a.lux-links:visited {
     text-shadow: 0 1px 1px var(--my-brand-dark-color);
 }
 
+.brand-dark {
+    color: var(--dark-accent);
+    text-shadow: 0 1px 1px var(--my-brand-dark-color);
+}
+
 
 .accent,
 .teacher {
     border-radius: 5px;
     padding: 1px 2px;
     text-shadow: 0 1px 1px var(--my-brand-silver-color);
+}
+
+/****** TIMETABLE *********/
+.gym-timetable {
+    height: 3px !important;
+    transform: translateY(-10px);
+    border-radius: 2px;
+    background: var(--lux-reverse-color-gradient);
+    opacity: 1 !important;
+}
+
+.time-classes {
+    color: var(--dark-accent);
 }
 
 /*** FORMS ******/
@@ -404,6 +426,10 @@ select.form-select option:hover {
         height: 30%;
     }
 
+    .btn-book {
+        transform: none;
+    }
+
 }
 
 
@@ -423,6 +449,7 @@ select.form-select option:hover {
         line-height: 30px;
     }
 
+    /****** HOME PAGE *********/
 
     .fancy-grid>.card-col {
         flex: 0 0 50%;
@@ -449,6 +476,25 @@ select.form-select option:hover {
     .detail-text {
         font-size: 1.3em;
     }
+
+    /****** TIMETABLE *********/
+    .timetable-class-names {
+        font-size: 1.5rem;
+    }
+
+    .time-classes {
+        font-size: 1.4rem;
+    }
+
+    .btn-book {
+        min-width: 120px;
+    }
+
+    .btn-book,
+    .btn-cancel-book {
+        font-size: 1.6rem;
+    }
+
 }
 
 @media (min-width: 992px) {
@@ -516,6 +562,15 @@ select.form-select option:hover {
         font-size: 1.5em;
     }
 
+    /****** TIMETABLE *********/
+    .timetable-class-names {
+        font-size: 1.7rem;
+    }
+
+    .time-classes {
+        font-size: 1.6rem;
+    }
+
 }
 
 @media (min-width: 1300px) {
@@ -545,6 +600,15 @@ select.form-select option:hover {
     .detail-text {
         font-size: 1.7em;
     }
+
+    /****** TIMETABLE *********/
+    .timetable-class-names {
+        font-size: 1.9rem;
+    }
+
+    .time-classes {
+        font-size: 1.8rem;
+    }
 }
 
 
@@ -553,5 +617,14 @@ select.form-select option:hover {
     .logs-head {
         font-size: 2.8rem;
         margin-bottom: 30px;
+    }
+
+    /****** TIMETABLE *********/
+    .timetable-class-names {
+        font-size: 2.5rem;
+    }
+
+    .time-classes {
+        font-size: 2.2rem;
     }
 }
