@@ -27,6 +27,7 @@ class FitnessClassesView(ListView):
     context_object_name = "fitnessclasses"
 
 
+@method_decorator(xframe_options_exempt, name="dispatch")
 class FitnessClassDetailView(DetailView):
     model = FitnessClasses
     context_object_name = "fitnessclass"
