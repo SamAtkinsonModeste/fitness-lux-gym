@@ -1,6 +1,4 @@
 from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
-from django.views.decorators.clickjacking import xframe_options_exempt
 from django.contrib import messages
 from django.shortcuts import redirect, get_object_or_404
 from django.views.generic import ListView
@@ -10,7 +8,6 @@ from .models import ScheduledClass, Booking
 from .forms import ScheduledClassForm
 
 
-@method_decorator(xframe_options_exempt, name="dispatch")
 class ScheduledClassListView(ListView):
     """
     Displays the gym timetable for administrators.
@@ -119,7 +116,6 @@ class ScheduledClassListView(ListView):
         return redirect("gymtimetable:admin_timetable")
 
 
-@method_decorator(xframe_options_exempt, name="dispatch")
 class UserGymTimetableListView(ListView):
     model = ScheduledClass
     context_object_name = "classes"
