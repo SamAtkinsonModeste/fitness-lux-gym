@@ -18,6 +18,7 @@
 
 
 
+
 /* Scope to auth forms without touching templates */
 form[action*="login"],
 form[action*="logout"],
@@ -27,11 +28,15 @@ form[action*="signup"] {
   max-width: 420px;
 }
 
+form[action*="account"] {
+  transform: translateY(-20px);
+}
+
 /* {{ form.as_p }} rows */
 form[action*="login"] p,
 form[action*="register"] p,
 form[action*="signup"] p {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 /* Labels */
@@ -86,6 +91,10 @@ form[action*="signup"] [type="submit"] {
 }
 
 /* Error lists from Django */
+ul {
+  margin-bottom: 0;
+}
+
 ul.errorlist {
   margin: 0 0 .5rem 0;
   padding-left: 0;
