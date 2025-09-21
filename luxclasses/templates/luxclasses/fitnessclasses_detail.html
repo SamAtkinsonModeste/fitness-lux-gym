@@ -6,17 +6,17 @@
 
 <!--  fitnessclass_detial.html starts here -->
 <div
-  class="container-fluid hero hero-detail d-flex flex-column justify-content-center align-items-center text-center text-white">
+  class="container-fluid hero-detail d-flex flex-column justify-content-center align-items-center text-center text-white">
   <div class="" here-text>
     <h1 class="display-3 fw-bold welcome well-shadow">{{ fitnessclass.gym_class_name }}</h1>
     <h2 class="display-3 fw-bold welcome well-shadow"> {{ fitnessclass.gym_class_name_extension }}</h2>
   </div>
 </div>
 <div class="container-fluid detail-nav">
-  <nav aria-label="breadcrumb" class="mt-3">
+  <nav aria-label="breadcrumb" class="m-3">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{{ luxhomepage_url }}">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">
+      <li class="breadcrumb-item"><a class="link lux-links-bread" href="{{ luxhomepage_url }}">Home</a></li>
+      <li class="breadcrumb-item active breadcrumb-name" aria-current="page">
         {{ fitnessclass.gym_class_name }}
       </li>
     </ol>
@@ -24,22 +24,25 @@
 </div>
 
 
-<div class="container mt-4">
-  <div class="image-detail">
-    <img src="{% static 'images/fitness_details/' %}{{ fitnessclass.detail_filename }}"
-      alt="{{ fitnessclass.gym_class_name }}" class="img-fluid mb-3">
+<div class="container my-4 detail-all">
+  <div class="row">
+    <!-- Image column -->
+    <div class="col-12 col-lg-6 image-detail mb-3 mb-lg-0">
+      <img src="{% static 'images/fitness_details/' %}{{ fitnessclass.detail_filename }}"
+        alt="{{ fitnessclass.gym_class_name }}" class="img-fluid">
+    </div>
+
+    <!-- Text column -->
+    <div class="col-12 col-lg-6 detail-text-container mt-2 mt-lg-0">
+      <p class="detail-text mt-auto ">{{ fitnessclass.content|safe }}</p>
+
+      <a class="btn brand back mb-3" href="{{ request.GET.next|default:luxhomepage_url }}">
+        ← Back to classes
+      </a>
+    </div>
   </div>
-  <div class="detail-text-container">
-    <p class="detail-text">{{ fitnessclass.content|safe }}</p>
-
-
-    <a class="btn btn-outline-secondary mb-3" href="{{ request.GET.next|default:luxhomepage_url }}">
-      ← Back to classes
-    </a>
-
-  </div>
-
 </div>
+
 
 
 {% endblock content %}
