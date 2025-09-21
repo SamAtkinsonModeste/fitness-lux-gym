@@ -479,11 +479,11 @@ select.form-select option:hover {
 
     /****** TIMETABLE *********/
     .timetable-class-names {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .time-classes {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
     }
 
     .btn-book {
@@ -520,6 +520,16 @@ select.form-select option:hover {
     .read-more {
         transform: translateY(-10px);
     }
+
+    /****** TIMETABLE *********/
+    .timetable-class-names {
+        font-size: 1.3rem;
+    }
+
+    .time-classes {
+        font-size: 1.2rem;
+    }
+
 
 }
 
