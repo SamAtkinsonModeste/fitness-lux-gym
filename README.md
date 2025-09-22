@@ -67,6 +67,8 @@ Lux Fitness Gym is a mobile‑first Django application that showcases a curated 
 - Demonstrates Django best practices (models, views, templates, messages, forms)
 - Applies **Agile** ways of working with epics, user stories, and MoSCoW prioritisation
 
+[Back to top ⬆️](#-table-of-contents)
+
 ---
 
 ## 📈 Agile Delivery
@@ -101,7 +103,7 @@ Lux Fitness Gym is a mobile‑first Django application that showcases a curated 
 
 </details>
 
----
+## [Back to top ⬆️](#-table-of-contents)
 
 ## 🧭 User Experience (UX)
 
@@ -154,7 +156,7 @@ Low‑fidelity sketches were translated into simple Bootstrap layouts. An intera
 - Custom CSS variables (including a gradient) for brand accents
 - Accessible color contrast and focus states
 
----
+## [Back to top ⬆️](#-table-of-contents)
 
 ## ✨ Features
 
@@ -202,7 +204,7 @@ A clean, responsive **Lux Gym** logo used site-wide:
 
 </details>
 
----
+## [Back to top ⬆️](#-table-of-contents)
 
 ### 🧭 Navbar
 
@@ -225,7 +227,7 @@ Mobile-first, **Bootstrap** navbar with collapse on small screens:
 
 </details>
 
----
+## [Back to top ⬆️](#-table-of-contents)
 
 ### 🔐 Authentication (Register / Login / Logout)
 
@@ -255,6 +257,8 @@ User accounts are handled with Django’s auth views and custom templates styled
 
 </details>
 
+[Back to top ⬆️](#-table-of-contents)
+
 ---
 
 ### 🏠 Homepage
@@ -279,6 +283,8 @@ A welcoming, **Bootstrap**-based layout that introduces the gym and classes:
 
 </details>
 
+[Back to top ⬆️](#-table-of-contents)
+
 ---
 
 ### 📄 Class Detail Page
@@ -298,6 +304,8 @@ Detailed view for each **gym class**:
 ![Class Detail – Desktop](static/images/readme/detail-class.png)
 
 </details>
+
+[Back to top ⬆️](#-table-of-contents)
 
 ---
 
@@ -319,6 +327,8 @@ A protected **frontend** dashboard (no daily reliance on Django Admin):
 
 </details>
 
+[Back to top ⬆️](#-table-of-contents)
+
 ---
 
 ### 🗓️ Timetable (User View)
@@ -339,6 +349,8 @@ Clear, readable schedule for visitors:
 
 </details>
 
+[Back to top ⬆️](#-table-of-contents)
+
 ---
 
 ### 🦶 Footer
@@ -358,10 +370,14 @@ Consistent footer with social media links:
 
 </details>
 
+[Back to top ⬆️](#-table-of-contents)
+
 ---
 
 > 🔎 **Testing, Validation & Accessibility**
 > Full testing notes (HTML/CSS validators, Python linting, Lighthouse/a11y checks) are documented separately here: **[TESTING.md](TESTING.md)**.
+
+[Back to top ⬆️](#-table-of-contents)
 
 ---
 
@@ -519,4 +535,4 @@ Documented issues with clear **symptom → cause → fix**.
 
 ---
 
-> **Back to top** – [Lux Fitness Gym](#lux-fitness-gym)
+[Back to top ⬆️](#-table-of-contents)
