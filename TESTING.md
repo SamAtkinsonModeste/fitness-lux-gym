@@ -7,21 +7,21 @@ No automated test suite was implemented in this release, though Django makes it 
 
 <details> <summary><strong><span style="font-size: 1.05em;">👈 Click to expand the table of contents</span></strong></summary>
 
-- [🧾 Code Validation](#-code-validation)
+- [🧾 Code Validation](#code-validation)
 
-  - [🌐 HTML](#-html)
+- [🌐 HTML](#html)
 
-  - [🎨 CSS](#-css)
+- [🎨 CSS](#css)
 
-  - [🐍 Python](#-python)
+- [🐍 Python](#python)
 
-  - [💡 Lighthouse](#-lighthouse)
+- [💡 Lighthouse](#lighthouse)
 
-  - [📱 Responsiveness](#-responsiveness)
+- [📱 Responsiveness](#responsiveness)
 
-  - [🌍 Browser Compatibility](#-browser-compatibility)
+- [🌍 Browser Compatibility](#browser-compatibility)
 
-  - [👥 User Story Testing](#-user-story-testing)
+- [👥 User Story Testing](#user-story-testing)
 
 </details>
 
@@ -173,7 +173,7 @@ used in Chrome DevTools (Incognito). Audited Performance, Accessibility, Best Pr
 Tested from 320px → 1440px using Chrome DevTools and Am I Responsive
 .
 
-Additional live testing done on iPhone, Mac Book Pro, and PC devices.
+Additional live testing done on iPhone, MacBook Pro, and PC devices.
 
 [Back to top ⬆️](#lux-fitness-gym)
 

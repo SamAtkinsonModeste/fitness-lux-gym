@@ -15,36 +15,36 @@
 <details>
   <summary><strong><span style="font-size: 1.05em;">👈 Click to expand the table of contents</span></strong></summary>
 
-- [📌 Overview](#-overview)
-- [📈 Agile Delivery](#-agile-delivery)
-- [🧭 User Experience (UX)](#-user-experience-ux)
+- [📌 Overview](#overview)
+- [📈 Agile Delivery](#agile-delivery)
+- [🧭 User Experience (UX)](#user-experience-ux)
 
-  - [🎯 Strategy & Goals](#-strategy--goals)
-  - [🧩 Scope & User Stories](#-scope--user-stories)
-  - [🗺️ Information Architecture & Schema](#-information-architecture--schema)
-  - [🧱 Wireframes](#-wireframes)
-  - [🎨 UI Design](#-ui-design)
+  - [🎯 Strategy & Goals](#strategy--goals)
+  - [🧩 Scope & User Stories](#scope--user-stories)
+  - [🗺️ Information Architecture & Schema](#information-architecture--schema)
+  - [🧱 Wireframes](#wireframes)
+  - [🎨 UI Design](#ui-design)
 
-- [✨ Features](#-features)
+- [✨ Features](#features)
 
-  - [🛤️ Key Journeys](#-key-journeys)
-  - [🧩 Existing Features](#-existing-features)
-  - [🔮 Future Enhancements](#-future-enhancements)
+  - [🛤️ Key Journeys](#key-journeys)
+  - [🧩 Existing Features](#existing-features)
+  - [🔮 Future Enhancements](#future-enhancements)
 
-- [♿ Accessibility](#-accessibility)
-- [🚀 Performance](#-performance)
-- [🔐 Security](#-security)
-- [🛠️ Technologies](#-technologies)
-- [💻 Local Development](#-local-development)
-- [🧪 Testing](#-testing)
-- [🐞 Bugs & Fixes](#-bugs--fixes)
-- [🚢 Deployment](#-deployment)
+- [♿ Accessibility](#accessibility)
+- [🚀 Performance](#performance)
+- [🔐 Security](#security)
+- [🛠️ Technologies](#technologies)
+- [💻 Local Development](#local-development)
+- [🧪 Testing](#testing)
+- [🐞 Bugs & Fixes](#bugs--fixes)
+- [🚢 Deployment](#deployment)
 
-  - [☁️ Heroku Deployment](#-heroku-deployment)
-  - [🍴 Forking & Cloning](#-forking--cloning)
+  - [☁️ Heroku Deployment](#heroku-deployment)
+  - [🍴 Forking & Cloning](#forking--cloning)
 
-- [🙏 Credits](#-credits)
-- [🏅 Acknowledgements](#-acknowledgements)
+- [🙏 Credits](#credits)
+- [🏅 Acknowledgements](#acknowledgements)
 
 </details>
 
@@ -75,7 +75,7 @@ Lux Fitness Gym is a mobile‑first Django application that showcases a curated 
 
 - **📋 Project Board (Agile / Backlog)** [Lux Fitness Project Board](https://github.com/users/SamAtkinsonModeste/projects/18/views/1)
 
-- **Issues:** <!-- GitHub Issues URL -->
+- **Issues:** [Lux Fitness Issues](https://github.com/SamAtkinsonModeste/fitness-lux-gym/issues)
 - Used **GitHub Projects** Kanban (Backlog → In Progress → Review → Done)
 - Stories include **Acceptance Criteria**, **Definition of Done**, and **labels** (theme, epic, MoSCoW).
 - **MoSCoW** priorities guided scope: Must‑have CRUD for classes & timetable, Should‑have filters/search, Could‑have extras (e.g., teacher bios), Won’t‑have (e.g., password reset) for this iteration.
@@ -427,9 +427,9 @@ The site uses **Django’s messages framework** with **custom-styled Bootstrap a
 
 - Landmarks for nav/main/footer
 - Link names are descriptive (no “click here”)
-- Images include `alt` text; decorative images `alt=""`
+- Images include `alt` text; decorative images use `alt=""`
 
-**Lighthouse Results can be found in the:**[TESTING.md](/TESTING.md)
+**Detailed accessibility & Lighthouse results:** see [TESTING.md](TESTING.md).
 
 ## 🚀 Performance
 
@@ -455,6 +455,8 @@ The site uses **Django’s messages framework** with **custom-styled Bootstrap a
 **Database**: SQLite (dev), Postgres (prod optional)
 **Hosting**: Heroku + WhiteNoise (static files)
 **Tooling**: VSCode, Git & GitHub, Chrome DevTools
+
+Dev Tools: Git (feature branches), GitHub (Issues/Projects), VSCode (Bash terminal, linters)
 
 Key packages (pin to your versions in `requirements.txt`):
 
@@ -520,7 +522,7 @@ python manage.py runserver
 - Validators: HTML (W3C), CSS (Jigsaw), Python (pep8/flake8)
 
 > 🔎 **Testing, Validation & Accessibility**
-> Full testing notes (HTML/CSS validators, Python linting, Lighthouse/a11y checks) are documented separately here: [TESTING.md](TESTING.md).
+> “Detailed accessibility validation (including Lighthouse) is documented in [TESTING.md](/TESTING.md).
 
 [Back to top ⬆️](#lux-fitness-gym)
 
@@ -530,7 +532,7 @@ python manage.py runserver
 
 Documented issues with clear **symptom → cause → fix**.
 
-### 2025‑09‑21 — Teacher field displayed index numbers
+### — Teacher field displayed index numbers
 
 - **Symptom:** Timetable showed `teacher` as numeric indexes; `get_teacher_display` failed.
 - **Cause:** Column stored as **text** while model used `IntegerField(choices)`.
@@ -540,7 +542,10 @@ Documented issues with clear **symptom → cause → fix**.
   - `chore(data): reset ScheduledClass table for clean seed`
   - `fix(model): cast teacher to IntegerField`
 
-(Keep adding any new bugs here.)
+### - Server 500
+
+- **Symptom:** deployed Heroku app displayed with Server 500
+- **Fix:** Removed meta tags whose urls were pointing to the wrong Heroku url
 
 ---
 
@@ -550,11 +555,11 @@ Documented issues with clear **symptom → cause → fix**.
 
 1. **Create app** in Heroku dashboard.
 2. **Config Vars:** `SECRET_KEY`, (optional) `DATABASE_URL` for Postgres.
-3. **Procfile:** `web: gunicorn <project_name>.wsgi`
+3. **Procfile:** `web: gunicorn fitness_lux_gym.wsgi`
 4. **settings.py:**
 
    - `DEBUG = False` (prod)
-   - `ALLOWED_HOSTS = ["<your-app>.herokuapp.com", "localhost"]`
+   - `ALLOWED_HOSTS = ["fitness-gym-lux9e794b641127.herokuapp.com", "localhost"]`
    - Static files: `whitenoise.middleware.WhiteNoiseMiddleware` and `STATIC_ROOT = BASE_DIR / "staticfiles"`
 
 5. **Static collection:** remove `DISABLE_COLLECTSTATIC` then deploy.
@@ -570,11 +575,12 @@ Documented issues with clear **symptom → cause → fix**.
 ## 🙏 Credits
 
 - **Docs:** Django, Bootstrap, Heroku, GitHub, VSCode
-- **Images:** Stock images for gym classes (e.g., Yoga, Pilates, Spin, HIIT, Zumba). Ensure licenses permit use and credit where required.
+- **Images:** Adobe Stock images for gym classes (e.g., Yoga, Pilates, Spin, HIIT, Zumba).
+- **AI Help:** ChatGPT for mainly text for Lux Fitness and help troubleshooting
 
 ## 🏅 Acknowledgements
 
-- Code Institute community, mentors, and tutors.
+- Code Institute, Rory Patrick Sheridan my mentor for this project.
 
 ---
 
