@@ -1,6 +1,6 @@
 # Lux Fitness Gym
 
-> **Tagline:** A responsive gym timetable & class booking experience built with Django & Bootstrap, deployed on Heroku for educational purpose only.
+> A responsive gym timetable & class booking experience built with Django & Bootstrap, deployed on Heroku for educational purpose only.
 
 ![Different devices with Lux Gym site displayed](static/images/readme/screen-shot-devices.png)
 
