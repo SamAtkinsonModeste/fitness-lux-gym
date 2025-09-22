@@ -139,13 +139,14 @@ Low‑fidelity sketches were translated into simple Bootstrap layouts. An intera
 
 [🔗 Interactive Wireframe - Created in AdobeXD:](https://xd.adobe.com/view/4be8ce91-5c34-4a35-adc9-2736f12b9fbb-1ebb/)
 
-Pages covered
+<details>
+  <summary><strong>Static fallback wireframe screenshots (click to expand)</strong></summary>
 
-Home (hero + featured classes)
-
-Class detail
-
-Timetable (by day)
+  <p align="center"><img src="static/images/readme/wireframe-mobile-home.png" alt="Wireframe – Home" width="200"></p>
+  <p align="center"><img src="static/images/readme/wireframe-mobile-timetable.png" alt="Wireframe – Timetable" width="200"></p>
+  <p align="center"><img src="static/images/readme/wireframe-tablet-home.png" alt="Wireframe – Class Detail" width="400"></p>
+   <p align="center"><img src="static/images/readme/wireframe-tablet-timetable.png" alt="Wireframe – Class Detail" width="400"></p>
+</details>
 
 ### 🎨 UI Design
 
@@ -179,6 +180,145 @@ Timetable (by day)
 - “Add to Calendar” (export .ics for a class)
 - Simple booking/request form (emails the gym)
 - Teacher profile pages with images
+
+### 🖼️ Logo
+
+A clean, responsive **Lux Gym** logo used site-wide:
+
+- Placed in the **navbar** and links to the **Homepage**.
+- Delivered via Django **staticfiles** and sized with **Bootstrap utilities** and/or a small CSS rule (e.g., `height: 32px`).
+- Includes descriptive `alt` text for screen readers.
+
+<details>
+  <summary><strong>Screenshots of Logo (click to expand)</strong></summary>
+
+**Logo in Mobile Navbar**
+
+![Logo – in Navbar (Mobile)](static/images/readme/logo-mobile.png)
+
+**Logo in Desktop Navbar**
+
+![Logo – in Navbar (Desktop)](static/images/readme/logo-desk-top.png)
+
+</details>
+
+---
+
+### 🧭 Navbar
+
+Mobile-first, **Bootstrap** navbar with collapse on small screens:
+
+- Links: **Home**, **Logout**, **Timetable**; **Create Timetable** (is visible to staff only).
+- Auth-aware: shows **Login / Register** when logged out, **Logout** when logged in (using Django template logic).
+- Uses accessible labels, focus outlines, and active-link styling.
+
+<details>
+  <summary><strong>Screenshots of Navigation (click to expand)</strong></summary>
+
+**Mobile Navbar**
+
+![Navbar – Mobile (collapsed menu)](static/images/readme/mobile-nav.png)
+
+**Desktop Navbar**
+
+![Navbar – Desktop](static/images/readme/nav-desktop.png)
+
+</details>
+
+---
+
+### 🏠 Homepage
+
+A welcoming, **Bootstrap**-based layout that introduces the gym and classes:
+
+- **Hero** section with headline, subheading, and clear CTAs (e.g., _View Classes_, _View Timetable_).
+- **Featured classes** grid with images, excerpts, and links to class detail pages.
+- Designed mobile-first; images use `alt` text; headings follow a logical outline for accessibility.
+
+<details>
+  <summary><strong>Screenshots (click to expand)</strong></summary>
+
+![Homepage – Hero (Desktop)](documentation/features/home-hero-desktop.png)
+![Homepage – Featured Classes (Mobile)](documentation/features/home-classes-mobile.png)
+
+</details>
+
+---
+
+### 📄 Class Detail Page
+
+Detailed view for each **gym class**:
+
+- Large header image, class name + extension, and rich description content.
+- **Breadcrumbs** for orientation and a “Back to classes” link for easy navigation.
+- Uses semantic HTML; media has descriptive `alt` attributes.
+
+<details>
+  <summary><strong>Screenshots (click to expand)</strong></summary>
+
+![Class Detail – Desktop](documentation/features/class-detail-desktop.png)
+![Class Detail – Mobile](documentation/features/class-detail-mobile.png)
+
+</details>
+
+---
+
+### 🛠️ Admin Dashboard (Frontend)
+
+A protected **frontend** dashboard (no daily reliance on Django Admin):
+
+- **Staff-only** CRUD for **Classes** and **Timetable** entries (create, edit, delete).
+- Built with Django views/forms and **Bootstrap**; shows **success/error alerts** via Django Messages.
+- Enforced with `login_required` and role checks (e.g., `request.user.is_staff`); CSRF enabled.
+
+<details>
+  <summary><strong>Screenshots (click to expand)</strong></summary>
+
+![Admin Dashboard – List View](documentation/features/dashboard-list.png)
+![Admin Dashboard – Create/Edit Form](documentation/features/dashboard-form.png)
+
+</details>
+
+---
+
+### 🗓️ Timetable (User View)
+
+Clear, readable schedule for visitors:
+
+- Filter by **day**; each entry shows **start time**, **duration**, and **teacher** (readable labels).
+- Responsive layout using **Bootstrap grid/flex**; badges/pills for quick scanning if desired.
+- Designed for fast scanning on mobile; keyboard accessible.
+
+<details>
+  <summary><strong>Screenshots (click to expand)</strong></summary>
+
+![Timetable – Desktop](documentation/features/timetable-desktop.png)
+![Timetable – Mobile](documentation/features/timetable-mobile.png)
+
+</details>
+
+---
+
+### 🦶 Footer
+
+Consistent footer with helpful links:
+
+- **Address**, **tel:** and **mailto:** links, and social icons (e.g., Font Awesome).
+- Opens external links safely; includes a simple **© Lux Gym** notice.
+- Reused across pages for consistent navigation and branding.
+
+<details>
+  <summary><strong>Screenshots (click to expand)</strong></summary>
+
+![Footer – Desktop](documentation/features/footer-desktop.png)
+![Footer – Mobile](documentation/features/footer-mobile.png)
+
+</details>
+
+---
+
+> 🔎 **Testing, Validation & Accessibility**
+> Full testing notes (HTML/CSS validators, Python linting, Lighthouse/a11y checks) are documented separately here: **[TESTING.md](TESTING.md)**.
 
 ---
 
