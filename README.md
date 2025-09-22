@@ -227,6 +227,36 @@ Mobile-first, **Bootstrap** navbar with collapse on small screens:
 
 ---
 
+### 🔐 Authentication (Register / Login / Logout)
+
+User accounts are handled with Django’s auth views and custom templates styled with **Bootstrap**.
+
+- **Register**: create an account to access member-only features.
+- **Login**: authenticate and return to the page you came from (where possible).
+- **Logout**: secure sign-out with a confirmation screen and success alert (Django Messages).
+- Templates use Django’s `{% csrf_token %}` and Bootstrap form classes for accessible, responsive forms.
+
+<details>
+  <summary><strong>Screenshots of Register / Login / Logout (click to expand)</strong></summary>
+
+<br>
+
+**Register**
+
+![Register Form](static/images/readme/register.png)
+
+**Login**
+
+![Login Form](static/images/readme/login.png)
+
+**Logout**
+
+![Logout Confirmation](static/images/readme/logout.png)
+
+</details>
+
+---
+
 ### 🏠 Homepage
 
 A welcoming, **Bootstrap**-based layout that introduces the gym and classes:
@@ -236,10 +266,16 @@ A welcoming, **Bootstrap**-based layout that introduces the gym and classes:
 - Designed mobile-first; images use `alt` text; headings follow a logical outline for accessibility.
 
 <details>
-  <summary><strong>Screenshots (click to expand)</strong></summary>
+  <summary><strong>Screenshots of Mobile & Desktop Homepage (click to expand)</strong></summary>
+<br>
 
-![Homepage – Hero (Desktop)](documentation/features/home-hero-desktop.png)
-![Homepage – Featured Classes (Mobile)](documentation/features/home-classes-mobile.png)
+**Mobile Home Page**
+
+![Homepage – (Mobile)](static/images/readme/mobile-home.png)
+
+**Desktop Home Page**
+
+![Homepage – (Desktop)](static/images/readme/home-page.png)
 
 </details>
 
@@ -254,10 +290,12 @@ Detailed view for each **gym class**:
 - Uses semantic HTML; media has descriptive `alt` attributes.
 
 <details>
-  <summary><strong>Screenshots (click to expand)</strong></summary>
+  <summary><strong>Screenshot of Detail Lux Class Zumba (click to expand)</strong></summary>
+<br>
 
-![Class Detail – Desktop](documentation/features/class-detail-desktop.png)
-![Class Detail – Mobile](documentation/features/class-detail-mobile.png)
+**Any one for a Zumba Class?**
+
+![Class Detail – Desktop](static/images/readme/detail-class.png)
 
 </details>
 
@@ -272,10 +310,12 @@ A protected **frontend** dashboard (no daily reliance on Django Admin):
 - Enforced with `login_required` and role checks (e.g., `request.user.is_staff`); CSRF enabled.
 
 <details>
-  <summary><strong>Screenshots (click to expand)</strong></summary>
+  <summary><strong>Screenshot of Admin Dashboard (click to expand)</strong></summary>
+<br>
 
-![Admin Dashboard – List View](documentation/features/dashboard-list.png)
-![Admin Dashboard – Create/Edit Form](documentation/features/dashboard-form.png)
+**View of admin created classes for the timetable**
+
+![Admin Dashboard](static/images/readme/admin.png)
 
 </details>
 
@@ -292,8 +332,10 @@ Clear, readable schedule for visitors:
 <details>
   <summary><strong>Screenshots (click to expand)</strong></summary>
 
-![Timetable – Desktop](documentation/features/timetable-desktop.png)
-![Timetable – Mobile](documentation/features/timetable-mobile.png)
+  <br>
+**Lux Fitness Timetable**
+
+![Timetable – Desktop](static/images/readme/timetable.png)
 
 </details>
 
@@ -301,17 +343,18 @@ Clear, readable schedule for visitors:
 
 ### 🦶 Footer
 
-Consistent footer with helpful links:
+Consistent footer with social media links:
 
-- **Address**, **tel:** and **mailto:** links, and social icons (e.g., Font Awesome).
+- **Social Media** links with the use of Font Awesome.
 - Opens external links safely; includes a simple **© Lux Gym** notice.
 - Reused across pages for consistent navigation and branding.
 
 <details>
-  <summary><strong>Screenshots (click to expand)</strong></summary>
+  <summary><strong>Screenshot of Footer (click to expand)</strong></summary>
+<br>
 
-![Footer – Desktop](documentation/features/footer-desktop.png)
-![Footer – Mobile](documentation/features/footer-mobile.png)
+**Footer with social media links**
+![Footer – Desktop](static/images/readme/footer.png)
 
 </details>
 
@@ -476,4 +519,4 @@ Documented issues with clear **symptom → cause → fix**.
 
 ---
 
-> **Back to top** – [Lux Fitness Gym – Project 4](#lux-fitness-gym--project-4-django)
+> **Back to top** – [Lux Fitness Gym](#lux-fitness-gym)
