@@ -24,7 +24,6 @@
         <div class="flex-fill">
             <div class="card shadow-sm p-4">
                 <h4 class="card-title text-center mb-3 brand">Add a New Class</h4>
-                {% load crispy_forms_tags %}
                 <form method="post" id="addGymClass">
                     {% csrf_token %}
                     <input type="hidden" name="action" value="create">
@@ -37,7 +36,7 @@
                                 Add Class
                             </button>
                         </div>
-
+                    </div>
                 </form>
             </div>
         </div>
