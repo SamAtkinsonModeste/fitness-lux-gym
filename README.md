@@ -381,6 +381,46 @@ Consistent footer with social media links:
 
 ---
 
+### 🔔 Alerts & User Feedback
+
+The site uses **Django’s messages framework** with **custom-styled Bootstrap alerts** to provide clear, timely feedback. Alerts are dismissible, consistent across pages, and accessible (using appropriate ARIA roles).
+
+**When users see alerts**
+
+- **Class added / updated / removed** → success messages confirm the action.
+- **Logged in** → info message (e.g., “You’re logged in as <username>”).
+- **Logged out** → success message confirming sign-out.
+- **Form errors / validation issues** → shown inline near fields; a top-level danger/warning alert may also appear when appropriate.
+
+**Styling & behavior**
+
+- Mapped to Bootstrap variants (e.g., success & danger) with a custom palette to match Lux Gym branding.
+- **Dismissible** (`×` close button) and positioned near the top of the main content for visibility.
+- Uses ARIA roles (`role="alert"`/`aria-live="assertive"` where appropriate) for screen readers.
+- Messages persist for a single request/redirect and then clear, avoiding stale notices.
+
+<details>
+  <summary><strong>Screenshots of Alerts (click to expand)</strong></summary>
+
+**Class added (success)**
+![Alert – Class Added](static/images/readme/alert-class-created.png)
+
+**Class updated (success)**
+![Alert – Class Updated](static/images/readme/alert-class-updated.png)
+
+**Class removed (success)**
+![Alert – Class Removed](static/images/readme/alert-class-removed.png)
+
+**Logged in as (info)**
+![Alert – Logged In](static/images/readme/alert-signed-in.png)
+
+**Logged out (success)**
+![Alert – Logged Out](static/images/readme/alert-signout.png)
+
+</details>
+
+---
+
 ## ♿ Accessibility
 
 - Landmarks for nav/main/footer
