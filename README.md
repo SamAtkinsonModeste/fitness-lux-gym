@@ -103,7 +103,7 @@ Lux Fitness Gym is a mobile‑first Django application that showcases a curated 
 
 </details>
 
-## [Back to top ⬆️](#-table-of-contents)
+[Back to top ⬆️](#-table-of-contents)
 
 ## 🧭 User Experience (UX)
 
@@ -156,7 +156,7 @@ Low‑fidelity sketches were translated into simple Bootstrap layouts. An intera
 - Custom CSS variables (including a gradient) for brand accents
 - Accessible color contrast and focus states
 
-## [Back to top ⬆️](#-table-of-contents)
+[Back to top ⬆️](#-table-of-contents)
 
 ## ✨ Features
 
@@ -204,7 +204,9 @@ A clean, responsive **Lux Gym** logo used site-wide:
 
 </details>
 
-## [Back to top ⬆️](#-table-of-contents)
+[Back to top ⬆️](#-table-of-contents)
+
+---
 
 ### 🧭 Navbar
 
@@ -227,7 +229,9 @@ Mobile-first, **Bootstrap** navbar with collapse on small screens:
 
 </details>
 
-## [Back to top ⬆️](#-table-of-contents)
+[Back to top ⬆️](#-table-of-contents)
+
+---
 
 ### 🔐 Authentication (Register / Login / Logout)
 
