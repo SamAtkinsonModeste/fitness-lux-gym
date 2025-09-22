@@ -53,7 +53,7 @@ HTML validated using W3C Validator
 
 </details>
 
-[Back to top ⬆️](<(#lux-fitness-gym)>)
+[Back to top ⬆️](#lux-fitness-gym)
 
 ---
 
@@ -70,7 +70,7 @@ CSS tested using Jigsaw CSS Validator
 
 </details>
 
-[Back to top ⬆️](<(#lux-fitness-gym)>)
+[Back to top ⬆️](#lux-fitness-gym)
 
 ---
 
@@ -103,7 +103,7 @@ Python code tested with PEP8 CI Linter
 
 </details>
 
-[Back to top ⬆️](<(#lux-fitness-gym)>)
+[Back to top ⬆️](#lux-fitness-gym)
 
 ---
 
@@ -166,7 +166,7 @@ Mobile & Desktop → Passed ✅
 
 </details>
 
-[Back to top ⬆️](<(#lux-fitness-gym)>)
+[Back to top ⬆️](#lux-fitness-gym)
 
 ---
 
@@ -177,7 +177,7 @@ Tested from 320px → 1440px using Chrome DevTools and Am I Responsive
 
 Additional live testing done on iPhone, Mac Book Pro, and PC devices.
 
-[Back to top ⬆️](<(#lux-fitness-gym)>)
+[Back to top ⬆️](#lux-fitness-gym)
 
 ---
 
@@ -208,7 +208,7 @@ Checked on latest versions of Chrome, Firefox, Edge, and Safari (Macbook Pro).
 
 </details>
 
-[Back to top ⬆️](<(#lux-fitness-gym)>)
+[Back to top ⬆️](#lux-fitness-gym)
 
 ---
 
@@ -260,4 +260,4 @@ Each GitHub Issue / User Story was tested manually. Results are summarised in sc
 
 ---
 
-🔙 [Back To README](./README.md) **|** [Back to top ⬆️](<(#lux-fitness-gym)>)
+🔙 [Back To README](./README.md) **|** [Back to top ⬆️](#lux-fitness-gym)
