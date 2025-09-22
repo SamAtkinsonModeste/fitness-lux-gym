@@ -49,6 +49,7 @@ HTML validated using W3C Validator
 ![User's Timetable page Results](static/images/readme/w3c-timetable.png)
 
 **Admin Dashboard**
+
 ![Admin Page Results](static/images/readme/w3c-admin.png)
 
 </details>
@@ -62,7 +63,7 @@ HTML validated using W3C Validator
 CSS tested using Jigsaw CSS Validator
 .
 
-<details> <summary><strong>Validation result (click to expand)</strong></summary>
+<details> <summary><strong>CSS Validation result (click to expand)</strong></summary>
 
 **styles.css**
 
@@ -112,29 +113,26 @@ Python code tested with PEP8 CI Linter
 Lighthouse
 used in Chrome DevTools (Incognito). Audited Performance, Accessibility, Best Practices, and SEO.
 
-Home Page
-Mobile & Desktop → Passed ✅
-
-Class Detail
-Mobile & Desktop → Passed ✅
-
-Timetable
-Mobile & Desktop → Passed ✅
-
-Admin Dashboard
-Mobile & Desktop → Passed ✅
+| Page                | Devices tested   | Result    |
+| ------------------- | ---------------- | --------- |
+| **Home Page**       | Mobile & Desktop | ✅ Passed |
+| **Class Detail**    | Mobile & Desktop | ✅ Passed |
+| **Timetable**       | Mobile & Desktop | ✅ Passed |
+| **Admin Dashboard** | Mobile & Desktop | ✅ Passed |
 
 <details> <summary><strong>Lighthouse results (click to expand)</strong></summary>
 
-##### Home Page
+### Home Page
 
 **Mobile Home Page**
+
 ![Mobile Home Page](static/images/readme/mobile-home-lighthouse.png)
 
 **Desktop Home Page**
+
 ![Mobile Home Page](static/images/readme/desktop-home-lighthouse.png)
 
-##### Detail Class
+### Detail Class
 
 **Mobile Detail Class Page**
 
@@ -144,7 +142,7 @@ Mobile & Desktop → Passed ✅
 
 ![Detail Class Page](static/images/readme/mobile-home-lighthouse.png)
 
-##### Timetable
+### Timetable
 
 **Mobile Timetable Page**
 
@@ -154,7 +152,7 @@ Mobile & Desktop → Passed ✅
 
 ![Gym Timetable](static/images/readme/gymtimetable-desktop-lighthouse.png)
 
-##### Admin Dashboard
+### Admin Dashboard
 
 **Mobile Admin Page**
 
@@ -192,7 +190,7 @@ Checked on latest versions of Chrome, Firefox, Edge, and Safari (Macbook Pro).
 | **Edge**                 | ✅ Good    | ✅ Good        |
 | **Safari (MacBook Pro)** | ✅ Good    | ✅ Good        |
 
-<details> <summary><strong>Results table (click to expand)</strong></summary>
+<details> <summary><strong>Images of Chrome/Firefox and Edge (click to expand)</strong></summary>
 
 **Chrome**
 
