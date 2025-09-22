@@ -1,4 +1,4 @@
-# Lux Fitness Gym 🏋️‍♀️
+# Lux Fitness Gym
 
 > **Tagline:** A responsive gym timetable & class booking experience built with Django & Bootstrap, deployed on Heroku for educational purpose only.
 
@@ -67,7 +67,7 @@ Lux Fitness Gym is a mobile‑first Django application that showcases a curated 
 - Demonstrates Django best practices (models, views, templates, messages, forms)
 - Applies **Agile** ways of working with epics, user stories, and MoSCoW prioritisation
 
-[Back to top ⬆️](#-table-of-contents)
+[Back to top ⬆️](#-lux-fitness-gym)
 
 ---
 
@@ -103,7 +103,7 @@ Lux Fitness Gym is a mobile‑first Django application that showcases a curated 
 
 </details>
 
-[Back to top ⬆️](#-table-of-contents)
+[Back to top ⬆️](#-lux-fitness-gym)
 
 ## 🧭 User Experience (UX)
 
@@ -156,7 +156,7 @@ Low‑fidelity sketches were translated into simple Bootstrap layouts. An intera
 - Custom CSS variables (including a gradient) for brand accents
 - Accessible color contrast and focus states
 
-[Back to top ⬆️](#-table-of-contents)
+[Back to top ⬆️](#-lux-fitness-gym)
 
 ## ✨ Features
 
@@ -204,7 +204,7 @@ A clean, responsive **Lux Gym** logo used site-wide:
 
 </details>
 
-[Back to top ⬆️](#-table-of-contents)
+[Back to top ⬆️](#-lux-fitness-gym)
 
 ---
 
@@ -229,7 +229,7 @@ Mobile-first, **Bootstrap** navbar with collapse on small screens:
 
 </details>
 
-[Back to top ⬆️](#-table-of-contents)
+[Back to top ⬆️](#-lux-fitness-gym)
 
 ---
 
@@ -261,7 +261,7 @@ User accounts are handled with Django’s auth views and custom templates styled
 
 </details>
 
-[Back to top ⬆️](#-table-of-contents)
+[Back to top ⬆️](#-lux-fitness-gym)
 
 ---
 
@@ -287,7 +287,7 @@ A welcoming, **Bootstrap**-based layout that introduces the gym and classes:
 
 </details>
 
-[Back to top ⬆️](#-table-of-contents)
+[Back to top ⬆️](#-lux-fitness-gym)
 
 ---
 
@@ -309,7 +309,7 @@ Detailed view for each **gym class**:
 
 </details>
 
-[Back to top ⬆️](#-table-of-contents)
+[Back to top ⬆️](#-lux-fitness-gym)
 
 ---
 
@@ -331,7 +331,7 @@ A protected **frontend** dashboard (no daily reliance on Django Admin):
 
 </details>
 
-[Back to top ⬆️](#-table-of-contents)
+[Back to top ⬆️](#-lux-fitness-gym)
 
 ---
 
@@ -353,7 +353,7 @@ Clear, readable schedule for visitors:
 
 </details>
 
-[Back to top ⬆️](#-table-of-contents)
+[Back to top ⬆️](#-lux-fitness-gym)
 
 ---
 
@@ -374,14 +374,7 @@ Consistent footer with social media links:
 
 </details>
 
-[Back to top ⬆️](#-table-of-contents)
-
----
-
-> 🔎 **Testing, Validation & Accessibility**
-> Full testing notes (HTML/CSS validators, Python linting, Lighthouse/a11y checks) are documented separately here: **[TESTING.md](TESTING.md)**.
-
-[Back to top ⬆️](#-table-of-contents)
+[Back to top ⬆️](#-lux-fitness-gym)
 
 ---
 
@@ -407,18 +400,23 @@ The site uses **Django’s messages framework** with **custom-styled Bootstrap a
   <summary><strong>Screenshots of Alerts (click to expand)</strong></summary>
 
 **Class added (success)**
+
 ![Alert – Class Added](static/images/readme/alert-class-created.png)
 
 **Class updated (success)**
+
 ![Alert – Class Updated](static/images/readme/alert-class-updated.png)
 
 **Class removed (success)**
+
 ![Alert – Class Removed](static/images/readme/alert-class-removed.png)
 
 **Logged in as (info)**
+
 ![Alert – Logged In](static/images/readme/alert-signed-in.png)
 
 **Logged out (success)**
+
 ![Alert – Logged Out](static/images/readme/alert-signout.png)
 
 </details>
@@ -428,12 +426,10 @@ The site uses **Django’s messages framework** with **custom-styled Bootstrap a
 ## ♿ Accessibility
 
 - Landmarks for nav/main/footer
-- Semantic headings (H1 per page)
 - Link names are descriptive (no “click here”)
 - Images include `alt` text; decorative images `alt=""`
-- Keyboard‑friendly focus states (visible outlines)
 
----
+**Lighthouse Results can be found in the:**[TESTING.md](/TESTING.md)
 
 ## 🚀 Performance
 
@@ -523,7 +519,10 @@ python manage.py runserver
 - Manual: UX walkthroughs across devices; form validation messages; navigation flows
 - Validators: HTML (W3C), CSS (Jigsaw), Python (pep8/flake8)
 
-> Full details in **TESTING.md** (test matrix, Lighthouse, accessibility checks, and screenshots).
+> 🔎 **Testing, Validation & Accessibility**
+> Full testing notes (HTML/CSS validators, Python linting, Lighthouse/a11y checks) are documented separately here: [TESTING.md](TESTING.md).
+
+[Back to top ⬆️](#-lux-fitness-gym)
 
 ---
 
@@ -579,4 +578,4 @@ Documented issues with clear **symptom → cause → fix**.
 
 ---
 
-[Back to top ⬆️](#-table-of-contents)
+[Back to top ⬆️](#-lux-fitness-gym)
