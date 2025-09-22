@@ -40,55 +40,56 @@
                 </form>
             </div>
         </div>
-    </div>
 
-    <!-- List of created gym classes -->
 
-    <div class="list-group flex-fill card shadow-sm p-4">
-        <h4 class="text-center mb-4 brand">Created Gym Classes</h4>
-        {% for cls in scheduled_classes %}
-        <div class="list-group-item rounded-4 my-2">
-            <div class="justify-content-between align-items-center">
-                <div class="card p-2 mb-2">
-                    <h4 class="brand">{{ cls.get_day_display }}</h4>
-                    <h5 class="accent"> Class: {{ cls.gym_class }}</h5>
-                    <h5> Time: {{ cls.get_gym_class_slot_display }} </h5>
-                    <h5 class="teacher">Teacher: {{ cls.get_teacher_display }}</h5>
-                    <h5>Class Duration Time: {{ cls.get_gym_class_duration_display }}</h5>
+        <!-- List of created gym classes -->
+
+        <div class="list-group flex-fill card shadow-sm p-4">
+            <h4 class="text-center mb-4 brand">Created Gym Classes</h4>
+            {% for cls in scheduled_classes %}
+            <div class="list-group-item rounded-4 my-2">
+                <div class="justify-content-between align-items-center">
+                    <div class="card p-2 mb-2">
+                        <h4 class="brand">{{ cls.get_day_display }}</h4>
+                        <h5 class="accent"> Class: {{ cls.gym_class }}</h5>
+                        <h5> Time: {{ cls.get_gym_class_slot_display }} </h5>
+                        <h5 class="teacher">Teacher: {{ cls.get_teacher_display }}</h5>
+                        <h5>Class Duration Time: {{ cls.get_gym_class_duration_display }}</h5>
+                    </div>
+                    <div class="ms-3 d-flex gap-2 justify-content-end">
+                        <!-- Edit: show inline edit form by adding ?edit=<pk> -->
+                        <a href="?edit={{ cls.pk }}" class="btn btn-sm btn-edit">Edit</a>
+
+                        <!-- Delete: post action=delete + pk -->
+                        <form method="post" class="d-inline">
+                            {% csrf_token %}
+                            <input type="hidden" name="action" value="delete">
+                            <input type="hidden" name="pk" value="{{ cls.pk }}">
+                            <button type="submit" class="btn btn-sm btn-delete">Delete</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="ms-3 d-flex gap-2 justify-content-end">
-                    <!-- Edit: show inline edit form by adding ?edit=<pk> -->
-                    <a href="?edit={{ cls.pk }}" class="btn btn-sm btn-edit">Edit</a>
 
-                    <!-- Delete: post action=delete + pk -->
-                    <form method="post" class="d-inline">
-                        {% csrf_token %}
-                        <input type="hidden" name="action" value="delete">
-                        <input type="hidden" name="pk" value="{{ cls.pk }}">
-                        <button type="submit" class="btn btn-sm btn-delete">Delete</button>
-                    </form>
-                </div>
+                {# Inline edit form for the selected item #}
+                {% if edit_obj and edit_obj.pk == cls.pk %}
+                <hr>
+                <h6 class="mb-2">Edit this class</h6>
+                <form method="post" class="mb-2">
+                    {% csrf_token %}
+                    <input type="hidden" name="action" value="update">
+                    <input type="hidden" name="pk" value="{{ cls.pk }}">
+                    {% crispy edit_form %}
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-save btn-sm" type="submit">Save changes</button>
+                        <a href="{% url 'gymtimetable:admin_timetable' %}" class="btn btn-brand btn-sm">Cancel</a>
+                    </div>
+                </form>
+                {% endif %}
             </div>
-
-            {# Inline edit form for the selected item #}
-            {% if edit_obj and edit_obj.pk == cls.pk %}
-            <hr>
-            <h6 class="mb-2">Edit this class</h6>
-            <form method="post" class="mb-2">
-                {% csrf_token %}
-                <input type="hidden" name="action" value="update">
-                <input type="hidden" name="pk" value="{{ cls.pk }}">
-                {% crispy edit_form %}
-                <div class="d-flex gap-2">
-                    <button class="btn btn-save btn-sm" type="submit">Save changes</button>
-                    <a href="{% url 'gymtimetable:admin_timetable' %}" class="btn btn-brand btn-sm">Cancel</a>
-                </div>
-            </form>
-            {% endif %}
+            {% empty %}
+            <p class="text-muted">No classes yet — add one above.</p>
+            {% endfor %}
         </div>
-        {% empty %}
-        <p class="text-muted">No classes yet — add one above.</p>
-        {% endfor %}
     </div>
 </div>
 {% endblock %}
